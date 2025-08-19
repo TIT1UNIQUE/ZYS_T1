@@ -1,0 +1,531 @@
+fileFormatVersion: 2
+guid: 2bee05bc5c097744ebf3b6ccc68283b2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_0'
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 323
+        width: 70
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4cb08cc11ef0a4c927e0e5b785c8b0
+      internalID: 112195955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_1'
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 320
+        width: 63
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac014346a89e7248bf67c1c231ef224
+      internalID: -1372205067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_2'
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 329
+        width: 65
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89884f3f567ded04f80eb97b423f5cb0
+      internalID: -1023785318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_3'
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 330
+        width: 60
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2f6a6efe297cc448fa83d77139a533
+      internalID: 608683614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_4'
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 325
+        width: 65
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b784fb41bea9bca4c9c68e539a6667d2
+      internalID: 1892118097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_5'
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 328
+        width: 67
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958cd3cb717bd224b9c73c743a1cbedd
+      internalID: -692515170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_6'
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 328
+        width: 65
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d4e3c630c9f5940b6baef9740b4de5
+      internalID: -729898353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_7'
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 325
+        width: 65
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2376e0ff285114fad01030de87bc83
+      internalID: 1819107497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_8'
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 323
+        width: 76
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee626e64ea5ea2d4ca951845c50379f2
+      internalID: -1531287496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_9'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 132
+        width: 78
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b006d57c8b30df47bdfaff07340cd0e
+      internalID: 1151679122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_10'
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 134
+        width: 58
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e368a65ac174a0b40addda95cc042f47
+      internalID: 1722095334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_11'
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 135
+        width: 61
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512b23ce75ea36842afa8906c2cf5858
+      internalID: 194203280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_12'
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 132
+        width: 61
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb39d8dd1ed8bf469176e29e398b16f
+      internalID: 566341612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_13'
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 128
+        width: 70
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d10ca41832aac448b59bb184e2b8d0d
+      internalID: -1703308722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_14'
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 131
+        width: 69
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb82d0fff9afcb4087f8dfea7e8fff1
+      internalID: -1367152249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_15'
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 130
+        width: 64
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7293f2a7d2460114185f767d68fe3bcb
+      internalID: -134488235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_16'
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 131
+        width: 63
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4135dfcef9e98d94482acc2fed9cc32f
+      internalID: 1986300993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_17'
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 127
+        width: 68
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1662fcbf2717724aaad394c2a8c9159
+      internalID: 1652366027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_0': 112195955
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_1': -1372205067
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_10': 1722095334
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_11': 194203280
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_12': 566341612
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_13': -1703308722
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_14': -1367152249
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_15': -134488235
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_16': 1986300993
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_17': 1652366027
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_2': -1023785318
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_3': 608683614
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_4': 1892118097
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_5': -692515170
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_6': -729898353
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_7': 1819107497
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_8': -1531287496
+      '[removal.ai]_cf7d0dd0-e4c4-477e-b84a-4e24070dda7a-aging-concept-female-male-characters-cycle-life-childhood-to-old-age-72903242_9': 1151679122
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

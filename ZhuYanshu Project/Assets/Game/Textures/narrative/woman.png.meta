@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: 9af1dacb9434a8b45ac0060fde915831
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_0'
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 566
+        width: 101
+        height: 176
+      alignment: 9
+      pivot: {x: 0.48224717, y: 0.49999967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66fbbe83bc533c4ea3836f9198e8c65
+      internalID: 195488189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_1'
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 559
+        width: 104
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549ee75d130f36646904745dbda9812d
+      internalID: -1018524555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_2'
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 574
+        width: 119
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accfefca1ed6ddd4bb1ad16a46fc9834
+      internalID: 482225704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_3'
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 566
+        width: 121
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103b5fe55a62cde4aa0b33f67117a865
+      internalID: -568832467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_4'
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 562
+        width: 123
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7df28797034ffb4c8578ad76dff32c4
+      internalID: -794985265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_5'
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 150
+        width: 118
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54ae3a13beecd840af54be1812de5d3
+      internalID: 350367665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_6'
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 149
+        width: 94
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc4c31dd7dfe404c87fbb5b4e14acb3
+      internalID: -855679274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_7'
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 151
+        width: 102
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc3568bf95b2884a9202a9484e79137
+      internalID: 2140397827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_8'
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 216
+        width: 102
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0272684abccf4479d44457ffc139ad
+      internalID: 1292383406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_9'
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 233
+        width: 162
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3150fb9232ec454fa567a2170ac817c
+      internalID: -1710580188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_10'
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 563
+        width: 122
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea75a505b32979d45b3e97e60adcb7b4
+      internalID: 1845242540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_11'
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 557
+        width: 147
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61c03bd0489faf40a03b7103d30002e
+      internalID: -1162573131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_12'
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 559
+        width: 162
+        height: 353
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69075690bea13e4486b6486299dd05f
+      internalID: -1911347350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_13'
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 157
+        width: 123
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43b3bdbb1f46ff48b946a00ca766468
+      internalID: -695007253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_14'
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 151
+        width: 164
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd07a8d89ebd074a8a8999f966afdbd
+      internalID: -1838280464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_15'
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 151
+        width: 141
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cd4a7761e9b1e4aa207eebb79ce7fc
+      internalID: -1347955691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_16'
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 142
+        width: 162
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603828d3097364d42842de0d4c2025ef
+      internalID: 748214320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_0': 195488189
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_1': -1018524555
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_10': 1845242540
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_11': -1162573131
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_12': -1911347350
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_13': -695007253
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_14': -1838280464
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_15': -1347955691
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_16': 748214320
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_2': 482225704
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_3': -568832467
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_4': -794985265
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_5': 350367665
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_6': -855679274
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_7': 2140397827
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_8': 1292383406
+      '[removal.ai]_3f228c39-b5fc-46db-835f-4d2d71b6a3e7-concept-life-cycles-man-woman-visualization-stages-human-body-growth-development-aging-baby-child-teenager-adult-old-person-101926093_8EO4UJ_9': -1710580188
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
