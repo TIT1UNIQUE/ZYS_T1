@@ -1,3 +1,4 @@
+using Assets.Game.Scripts.game.VIC.ui.notif;
 using com;
 using DG.Tweening;
 using System;
@@ -128,5 +129,6 @@ public class MainScreenSystem : MonoBehaviour
     public void OnClick_AppIcon()
     {
         ToggleCanvasGroup(cg_App, true, animationDuration_short);
+        NotifSystem.instance.StartMimic();
     }
 }
