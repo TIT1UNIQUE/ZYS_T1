@@ -53,8 +53,21 @@ public class MainScreenSystem : MonoBehaviour
         }
     }
 
+    public bool testMainGame;
+
     private void Start()
     {
+        if (testMainGame)
+        {
+            ToggleCanvasGroup(cg_Welcome, false);
+            ToggleCanvasGroup(cg_Desktop, true);
+            ToggleCanvasGroup(cg_Mail, false);
+            ToggleCanvasGroup(cg_App, false);
+            ToggleCanvasGroup(cg_popup_warning_closeMail, false);
+            openningEmailBtn.enabled = false;
+            return;
+        }
+
         ToggleCanvasGroup(cg_Welcome, false);
         ToggleCanvasGroup(cg_Desktop, false);
         ToggleCanvasGroup(cg_Mail, false);

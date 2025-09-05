@@ -11,8 +11,6 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
         public Vector2 startAnchorPos;
         public Vector2 endAnchorPos;
         public float durationMove;
-        public float durationFade;
-        public float durationDelay;
         public Ease ease;
 
         public NotifPrototype[] notifs_test;
@@ -42,11 +40,11 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
 
         void Add(NotifPrototype p)
         {
-            FadeCrtNotif();
+            HideCrtNotif();
 
             var newNotif = Instantiate(prefab, prefab.transform.parent);
-            newNotif.Init(p);
             newNotif.gameObject.SetActive(true);
+            newNotif.Init(p);
 
             var rect = newNotif.GetComponent<RectTransform>();
             rect.anchoredPosition = startAnchorPos;
@@ -55,21 +53,12 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
             crtNotif = newNotif;
         }
 
-        void FadeCrtNotif()
+        void HideCrtNotif()
         {
             if (crtNotif == null)
                 return;
 
-            var rect = crtNotif.GetComponent<RectTransform>();
-            rect.DOKill();
-            rect.DOAnchorPos(startAnchorPos, durationMove).SetDelay(durationDelay);
-            rect.GetComponent<CanvasGroup>().DOFade(0, durationFade).OnComplete(DestroyCrtNotif).SetDelay(durationDelay);
-        }
-
-        void DestroyCrtNotif()
-        {
-            Destroy(crtNotif.gameObject);
-            crtNotif = null;
+            crtNotif.Hide();
         }
     }
 }
