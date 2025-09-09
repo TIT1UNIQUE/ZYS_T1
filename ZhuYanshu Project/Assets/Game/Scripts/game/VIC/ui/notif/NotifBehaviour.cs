@@ -16,7 +16,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
         public Image img;
         public float durationFade;
         public float durationDelay;
-        public float lifetime = 3.5;
+        public float lifetime = 3;
 
         private void Awake()
         {

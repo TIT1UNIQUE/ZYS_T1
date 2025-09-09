@@ -1018,12 +1018,11 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "",
+        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
     "useTilingAndOffset": false,
-    "useTexelSize": true,
     "m_Modifiable": true,
     "m_DefaultType": 0
 }
@@ -1158,7 +1157,6 @@
     "m_SourceType": 0,
     "m_FunctionName": "sdRoundedRectAdaptive",
     "m_FunctionSource": "49596b8fe1f00364f8287f0b5b07fdae",
-    "m_FunctionSourceUsePragmas": true,
     "m_FunctionBody": "\r\n    p = p / r;\r\n    float2 gs = sign(p);\r\n    float2 ps = abs(p);\r\n    float gm = pow(ps.x, n) + pow(ps.y, n);\r\n    float gd = pow(gm, 1.0 / n) - r;\r\n    float2  g = gs * pow(ps, float2(n - 1.0, n - 1.0)) * pow(gm, 1.0 / n - 1.0);\r\n    p = abs(p); if (p.y > p.x) p = p.yx;\r\n    n = 2.0 / n;\r\n    float s = 1.0;\r\n    float d = 1e20;\r\n    const int num = 12;\r\n    float2 oq = float2(1.0, 1.0);\r\n    for (int i = 1; i < num; i++) {\r\n        float h = float(i)/float(num-1);\r\n        vec2 q = float2(pow(cos(h * 3.1415927 / 4.0), n),\r\n                      pow(sin(h * 3.1415927 / 4.0), n));\r\n        float2  pa = p - oq;\r\n        float2  ba = q - oq;\r\n        float2  z = pa - ba * clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0);\r\n        float d2 = dot(z, z);\r\n        if (d2 < d) {\r\n            d = d2;\r\n            s = pa.x * ba.y - pa.y * ba.x;\r\n        }\r\n        oq = q;\r\n    }\r\n    return float3(sqrt(d) * sign(s) * r, g, 0);\r"
 }
 
@@ -1721,7 +1719,7 @@
     },
     "m_DefaultValue": {
         "x": 0.0,
-        "y": 1.0
+        "y": 0.0
     },
     "m_Labels": []
 }
@@ -2364,9 +2362,6 @@
     "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
-    "m_DisableTint": false,
-    "m_AdditionalMotionVectorMode": 0,
-    "m_AlembicMotionVectors": false,
     "m_SupportsLODCrossFade": false,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
@@ -2524,7 +2519,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "",
+        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -2725,8 +2720,8 @@
         "y": 1.0
     },
     "m_DefaultValue": {
-        "x": -1.0,
-        "y": 1.0
+        "x": 0.0,
+        "y": 0.0
     },
     "m_Labels": []
 }
@@ -2978,7 +2973,7 @@
     },
     "m_DefaultValue": {
         "x": 0.0,
-        "y": 1.0
+        "y": 0.0
     },
     "m_Labels": []
 }
@@ -3021,8 +3016,8 @@
         "y": 1.0
     },
     "m_DefaultValue": {
-        "x": -1.0,
-        "y": 1.0
+        "x": 0.0,
+        "y": 0.0
     },
     "m_Labels": []
 }
@@ -3376,7 +3371,6 @@
     "m_SourceType": 0,
     "m_FunctionName": "normalizeSize",
     "m_FunctionSource": "49596b8fe1f00364f8287f0b5b07fdae",
-    "m_FunctionSourceUsePragmas": true,
     "m_FunctionBody": "Enter function body here..."
 }
 
