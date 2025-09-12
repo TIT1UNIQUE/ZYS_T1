@@ -8,8 +8,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
     {
         public static NotifSystem instance;
 
-        public Vector2 startAnchorPos;
-        public Vector2 endAnchorPos;
+        public RectTransform startAnchor;
+        public RectTransform endAnchor;
         public float durationMove;
         public Ease ease;
 
@@ -47,8 +47,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
             newNotif.Init(p);
 
             var rect = newNotif.GetComponent<RectTransform>();
-            rect.anchoredPosition = startAnchorPos;
-            rect.DOAnchorPos(endAnchorPos, durationMove).SetEase(ease);
+            rect.anchoredPosition = startAnchor.anchoredPosition;
+            rect.DOAnchorPos(endAnchor.anchoredPosition, durationMove).SetEase(ease);
 
             crtNotif = newNotif;
         }
