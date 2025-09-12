@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Assets.Game.Scripts.game.VIC.ui.Message;
 
 namespace Assets.Game.Scripts.game.VIC.ui.notif
 {
@@ -22,9 +23,9 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
         {
         }
 
-        public void Init(NotifPrototype proto)
+        public void Init(MessagePrototype proto)
         {
-            titleTxt.text = proto.title;
+            titleTxt.text = proto.name;
             contentTxt.text = proto.content;
             img.sprite = proto.sp;
             timeTxt.text = DateTime.Now.ToString("h:mm tt", CultureInfo.InvariantCulture);

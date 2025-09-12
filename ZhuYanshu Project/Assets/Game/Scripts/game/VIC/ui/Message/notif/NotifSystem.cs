@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using Assets.Game.Scripts.game.VIC.ui.Message;
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
@@ -6,39 +7,16 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
 {
     public class NotifSystem : MonoBehaviour
     {
-        public static NotifSystem instance;
-
         public RectTransform startAnchor;
         public RectTransform endAnchor;
         public float durationMove;
         public Ease ease;
 
-        public NotifPrototype[] notifs_test;
         public NotifBehaviour prefab;
 
         private NotifBehaviour crtNotif;
 
-        private void Awake()
-        {
-            instance = this;
-        }
-
-        public void StartMimic()
-        {
-
-            StartCoroutine(CreateMimicNotifIE());
-        }
-
-        IEnumerator CreateMimicNotifIE()
-        {
-            foreach (var n in notifs_test)
-            {
-                yield return new WaitForSeconds(n.mimicDelay);
-                Add(n);
-            }
-        }
-
-        void Add(NotifPrototype p)
+        public void Add(MessagePrototype p)
         {
             HideCrtNotif();
 
@@ -53,7 +31,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
             crtNotif = newNotif;
         }
 
-        void HideCrtNotif()
+        public void HideCrtNotif()
         {
             if (crtNotif == null)
                 return;

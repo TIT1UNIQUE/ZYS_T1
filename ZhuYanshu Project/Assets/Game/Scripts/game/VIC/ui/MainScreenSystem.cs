@@ -1,3 +1,4 @@
+using Assets.Game.Scripts.game.VIC.ui.Message;
 using Assets.Game.Scripts.game.VIC.ui.notif;
 using com;
 using DG.Tweening;
@@ -142,6 +143,6 @@ public class MainScreenSystem : MonoBehaviour
     public void OnClick_AppIcon()
     {
         ToggleCanvasGroup(cg_App, true, animationDuration_short);
-        NotifSystem.instance.StartMimic();
+        MessageSystem.instance.初始化message系统();
     }
 }
