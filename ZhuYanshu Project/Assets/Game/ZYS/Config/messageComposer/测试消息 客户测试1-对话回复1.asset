@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
+  m_Name: "\u6D4B\u8BD5\u6D88\u606F \u5BA2\u6237\u6D4B\u8BD51-\u5BF9\u8BDD\u56DE\u590D1"
+  m_EditorClassIdentifier: 
+  rawText: <color=#AA00FF><i>wq</i></color>ha______h<size=200%>hs</size>eq______we<color=#FFAAAA>wq</color>Your
+    best enemy!!!!-<sprite index=0><size=200%><sprite index=1></size><sprite index=2><sprite
+    index=3><sprite index=4><sprite index=5><sprite index=6><sprite index=7><sprite
+    index=8><sprite index=9><sprite index=10><sprite index=11><sprite index=12>
+  options:
+  - Anything
+  - Cat
+  - Product A
+  - Product B
+  blanks:
+  - anchorPos: {x: 0, y: 0}
+    correctAnswerIndex: 0
+  - anchorPos: {x: 0, y: 0}
+    correctAnswerIndex: 2
+  - anchorPos: {x: 0, y: 0}
+    correctAnswerIndex: 1
+  "\u5907\u6CE8": "\u554A\u5B9E\u6253\u5B9E\u5BA2\u6237\u7684\u5361\u4E0A"
