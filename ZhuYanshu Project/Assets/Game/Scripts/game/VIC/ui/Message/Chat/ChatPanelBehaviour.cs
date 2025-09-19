@@ -11,18 +11,19 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 {
     public class ChatPanelBehaviour : MonoBehaviour
     {
-        public ChatItemBehaviour prefab_itemLeft;
-        public ChatItemBehaviour prefab_itemRight;
+        public ChatItemBehaviour prefab_itemRemote;
+        public ChatItemBehaviour prefab_itemSelf;
         public Transform chatParent;
 
         public List<ChatItemBehaviour> currentChats = new List<ChatItemBehaviour>();
+
         private void Start()
         {
             Clear();
         }
         public void AddSelf(MessagePrototype proto)
         {
-            var cb = Instantiate(prefab_itemRight, chatParent);
+            var cb = Instantiate(prefab_itemSelf, chatParent);
             cb.gameObject.SetActive(true);
             cb.Show(proto);
 
@@ -30,7 +31,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
         }
         public void AddRemote(MessagePrototype proto)
         {
-            var cb = Instantiate(prefab_itemLeft, chatParent);
+            var cb = Instantiate(prefab_itemRemote, chatParent);
             cb.gameObject.SetActive(true);
             cb.Show(proto);
 

@@ -9,42 +9,41 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
     {
         public static ChatPanelSystem instance;
         public ChatPanelBehaviour cpb;
-        public List<MessageCache> messageCaches = new List<MessageCache>();
+        public List<ChatData> messageCaches = new List<ChatData>();
 
         private void Awake()
         {
             instance = this;
         }
 
-        public void AddMessage(MessagePrototype m)
+        public void AddMessage(MessagePrototype m, bool isNewMessage)
         {
-            MessageCache targetMc = null;
+            ChatData targetMc = null;
             foreach (var mc in messageCaches)
             {
 
                 if (mc.messages.Count > 0 && mc.messages[0].name == m.name)
                 {
+                    mc.messages.Add(m);
                     targetMc = mc;
+                     // MessageSystem.instance.renew?reddot??(m);
                 }
             }
 
             if (targetMc == null)
             {
-                targetMc = new MessageCache();
+                targetMc = new ChatData();
                 targetMc.name = m.name;
+                targetMc.messages.Add(m);
                 messageCaches.Add(targetMc);
-                MessageSystem.instance.CreateMessageConnection(m);
+                MessageSystem.instance.CreateConnection(targetMc,m,isNewMessage);
             }
-
-            targetMc.messages.Add(m);
-            // MessageSystem.instance.renew?reddot??(m);
         }
 
-        public MessageCache GetMessageCache(string name)
+        public ChatData GetMessageCache(string name)
         {
             foreach (var mc in messageCaches)
             {
-
                 if (mc.messages.Count > 0 && mc.messages[0].name == name)
                 {
                     return mc;
@@ -54,14 +53,13 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             return null;
         }
 
-        public void Show(MessagePrototype m)
+        public void Show(ChatData cd)
         {
-            MessageCache mc = GetMessageCache(m.name);
             //show all chats of this message cache
             cpb.Clear();
-            foreach (var p in mc.messages)
+            foreach (var p in cd.messages)
             {
-                if (p.name == mc.name)
+                if (p.name == cd.name)
                 {
                     cpb.AddRemote(p);
                 }
@@ -74,7 +72,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
         }
     }
 
-    public class MessageCache
+    public class ChatData
     {
         public string name;
         public List<MessagePrototype> messages = new List<MessagePrototype>();

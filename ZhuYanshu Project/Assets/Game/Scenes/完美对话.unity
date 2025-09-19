@@ -1826,8 +1826,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd8377228078b540989fd7a578772b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab_itemLeft: {fileID: 2120969740}
-  prefab_itemRight: {fileID: 1107798081}
+  prefab_itemRemote: {fileID: 1107798081}
+  prefab_itemSelf: {fileID: 2120969740}
   chatParent: {fileID: 908085182}
   currentChats: []
 --- !u!1 &247223087
@@ -6419,12 +6419,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0ff767a2b58144db01e339989d5a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleTxt: {fileID: 0}
-  contentTxt: {fileID: 0}
-  timeTxt: {fileID: 0}
-  img: {fileID: 0}
-  durationFade: 0
-  durationDelay: 0
+  titleTxt: {fileID: 1960541440}
+  contentTxt: {fileID: 2073180011}
+  timeTxt: {fileID: 237978505}
+  img: {fileID: 905977861}
+  durationFade: 0.4
+  durationDelay: 0.5
   lifetime: 3
 --- !u!225 &793232301
 CanvasGroup:
@@ -6923,6 +6923,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905977859}
   m_CullTransparentMesh: 1
+--- !u!1 &907071902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907071903}
+  - component: {fileID: 907071904}
+  m_Layer: 0
+  m_Name: chat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &907071903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907071902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 979952215}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907071904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907071902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3604f44202659844bcafe5d892acbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cpb: {fileID: 243808593}
 --- !u!1 &908085181
 GameObject:
   m_ObjectHideFlags: 0
@@ -7854,6 +7899,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 996382724}
+  - {fileID: 907071903}
   m_Father: {fileID: 924916274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &979952216
@@ -7868,7 +7914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf63c1e0ae1cc56408ba69664b834715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messages: []
+  connections: []
   messagePrefab: {fileID: 6672175590855137375}
   notifSystem: {fileID: 996382725}
   "\u5F00\u5934\u7684\u51E0\u4E2A\u6D88\u606F":
@@ -8039,7 +8085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startAnchor: {fileID: 1244284318}
   endAnchor: {fileID: 2103571256}
-  durationMove: 0.6
+  durationMove: 0.5
   ease: 9
   prefab: {fileID: 793232300}
 --- !u!1 &999745997
@@ -8994,7 +9040,7 @@ GameObject:
   - component: {fileID: 1107798079}
   - component: {fileID: 1107798081}
   m_Layer: 5
-  m_Name: ChatItem-Right
+  m_Name: ChatItem-Remote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10307,7 +10353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: a115fdc1da77e09478198a8e8278150c, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 0.74796313, g: 0.7201257, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14654,7 +14700,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1050523712}
   m_HandleRect: {fileID: 1050523711}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -18175,7 +18221,7 @@ GameObject:
   - component: {fileID: 2120969738}
   - component: {fileID: 2120969740}
   m_Layer: 5
-  m_Name: ChatItem-Left
+  m_Name: ChatItem-Self
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

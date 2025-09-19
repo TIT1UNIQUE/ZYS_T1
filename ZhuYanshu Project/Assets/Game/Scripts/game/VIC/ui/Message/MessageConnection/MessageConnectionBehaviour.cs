@@ -14,25 +14,23 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public TextMeshProUGUI txt_content;
         public TextMeshProUGUI txt_name;
         public TextMeshProUGUI txt_time;
-        MessagePrototype proto;
 
-        public void Show(MessagePrototype proto, bool withAnim)
+        public MessagePrototype coverMsg { get; private set; }
+        public ChatData chatData { get; private set; }
+
+        public void Init(ChatData c)
         {
-            this.proto = proto;
-            Show(proto.sp, proto.name, proto.content, proto.timeStr, withAnim);
+            chatData = c;
         }
 
-        public void Show(Sprite sp, string name, string content, string timeStr, bool withAnim)
+        public void SetMessage(MessagePrototype cm)
         {
-            img.sprite = sp;
-            txt_name.text = name;
-            txt_content.text = content;
-            txt_time.text = timeStr;
+            this.coverMsg = cm;
 
-            if (withAnim)
-                PlayShowAnimation();
-            else
-                DefaultShow();
+            img.sprite = cm.sp;
+            txt_name.text = cm.name;
+            txt_content.text = cm.content;
+            txt_time.text = cm.timeStr;
         }
 
         public void Hide()
@@ -44,7 +42,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public void OnClick()
         {
             Debug.Log("OnClick");
-            ChatPanelSystem.instance.Show(this.proto);
+            ChatPanelSystem.instance.Show(chatData);
         }
 
         public TranslucentImage tImg;
@@ -58,13 +56,24 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public float duration_ShowAnimation;
         public CanvasGroup cg;
 
-        void DefaultShow()
+     public  void PlayNoAnimation()
         {
-            //Debug.Log("ShowContext");
+            //Debug.Log("PlayNoAnimation");
             cg.alpha = 1;
+
+        }
+     public    void PlayRefreshAnimation()
+        {
+            //毛玻璃 alpha变化
+            tImg.DOKill();
+            var c = tImg.color;
+            c.a = startAlpha;
+            tImg.color = c;
+
+            tImg.DOFade(endAlpha, duration_ShowAnimation);
         }
 
-        void PlayShowAnimation()
+    public    void PlayShowAnimation()
         {
             //Debug.Log("PlayShowAnimation");
             cg.alpha = 0;

@@ -10,7 +10,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
     {
         public static MessageSystem instance;
 
-        public List<MessageConnectionBehaviour> messages = new List<MessageConnectionBehaviour>();
+        public List<MessageConnectionBehaviour> connections = new List<MessageConnectionBehaviour>();
 
         public MessageConnectionBehaviour messagePrefab;
         public NotifSystem notifSystem;
@@ -47,21 +47,38 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public void AddMessage(MessagePrototype p, bool isNewMessage)
         {
             //var mc = ChatPanelSystem.instance.GetMessageCache(p.name);
-            ChatPanelSystem.instance.AddMessage(p);
+            ChatPanelSystem.instance.AddMessage(p,isNewMessage);
 
             if (isNewMessage)
                 notifSystem.Add(p);
         }
 
-        public MessageConnectionBehaviour CreateMessageConnection(MessagePrototype p)
+        public void RefreshMessageConnection(string name, MessagePrototype p)
+        {
+            foreach (var con in connections)
+            {
+                if (con.chatData.name == name)
+                {
+                    con.SetMessage(p);
+                    con.PlayRefreshAnimation();
+                }
+            }
+        }
+
+        public MessageConnectionBehaviour CreateConnection(ChatData c, MessagePrototype p, bool withAnim)
         {
             var mb = Instantiate(messagePrefab, messagePrefab.transform.parent);
             mb.transform.SetAsFirstSibling();
 
             mb.gameObject.SetActive(true);
-            mb.Show(p, true);
-            ChatPanelSystem.instance.AddMessage(p);
+            mb.Init(c);
+            mb.SetMessage(p);
+            if (withAnim)
+                mb.PlayShowAnimation();
+            else
+                mb.PlayNoAnimation();
 
+            connections.Add(mb);
             return mb;
         }
 
