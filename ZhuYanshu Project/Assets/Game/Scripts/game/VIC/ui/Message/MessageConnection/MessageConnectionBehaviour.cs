@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace Assets.Game.Scripts.game.VIC.ui.Message
 {
-    public class MessageBehaviour : MonoBehaviour
+    public class MessageConnectionBehaviour : MonoBehaviour
     {
         public Image img;
         public TextMeshProUGUI txt_content;
@@ -44,7 +44,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public void OnClick()
         {
             Debug.Log("OnClick");
-            ChatPanelSystem.instance.cpb.Show(this.proto);
+            ChatPanelSystem.instance.Show(this.proto);
         }
 
         public TranslucentImage tImg;

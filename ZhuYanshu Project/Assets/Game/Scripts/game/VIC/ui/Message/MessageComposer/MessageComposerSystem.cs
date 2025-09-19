@@ -19,6 +19,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer
     ///         自动滚动
     ///         手动滚动（鼠标滚轮）
     /// 主体下方显示编辑中的消息 MessageComposerPanel
+    ///     左侧显示提示图文，右侧显示拼字游戏交互界面
     ///     拼字游戏完型填空的风格
     ///     有预置的文字和空缺的文字框
     ///         因为空缺的文字长度不同

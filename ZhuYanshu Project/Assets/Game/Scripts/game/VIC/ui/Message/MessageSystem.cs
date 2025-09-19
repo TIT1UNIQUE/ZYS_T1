@@ -1,4 +1,5 @@
-﻿using Assets.Game.Scripts.game.VIC.ui.notif;
+﻿using Assets.Game.Scripts.game.VIC.ui.ChatPanel;
+using Assets.Game.Scripts.game.VIC.ui.notif;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,9 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
     {
         public static MessageSystem instance;
 
-        public List<MessageBehaviour> messages = new List<MessageBehaviour>();
+        public List<MessageConnectionBehaviour> messages = new List<MessageConnectionBehaviour>();
 
-        public MessageBehaviour messagePrefab;
+        public MessageConnectionBehaviour messagePrefab;
         public NotifSystem notifSystem;
 
         private void Awake()
@@ -19,12 +20,11 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             instance = this;
         }
 
-        // Use this for initialization
         void Start()
         {
             foreach (var 默认消息 in 默认的几个消息)
             {
-                CreateMessage(默认消息, false);
+                AddMessage(默认消息, false);
             }
         }
 
@@ -40,22 +40,28 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             foreach (var 开头的消息 in 开头的几个消息)
             {
                 yield return new WaitForSeconds(1);
-                CreateMessage(开头的消息, true);
+                AddMessage(开头的消息, true);
             }
         }
 
-        public MessageBehaviour CreateMessage(MessagePrototype p, bool isNewMessage)
+        public void AddMessage(MessagePrototype p, bool isNewMessage)
+        {
+            //var mc = ChatPanelSystem.instance.GetMessageCache(p.name);
+            ChatPanelSystem.instance.AddMessage(p);
+
+            if (isNewMessage)
+                notifSystem.Add(p);
+        }
+
+        public MessageConnectionBehaviour CreateMessageConnection(MessagePrototype p)
         {
             var mb = Instantiate(messagePrefab, messagePrefab.transform.parent);
             mb.transform.SetAsFirstSibling();
 
             mb.gameObject.SetActive(true);
-            mb.Show(p, isNewMessage);
+            mb.Show(p, true);
+            ChatPanelSystem.instance.AddMessage(p);
 
-            if (isNewMessage)
-            {
-                notifSystem.Add(p);
-            }
             return mb;
         }
 
