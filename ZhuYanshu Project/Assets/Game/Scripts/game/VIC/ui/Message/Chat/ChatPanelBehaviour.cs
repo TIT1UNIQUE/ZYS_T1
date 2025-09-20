@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Message;
+using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
 using DG.Tweening;
 using LeTai.Asset.TranslucentImage;
 using System.Collections;
@@ -16,6 +17,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
         public Transform chatParent;
 
         public List<ChatItemBehaviour> currentChats = new List<ChatItemBehaviour>();
+        public TextComposerDuolingoStyle textComposer;
 
         private void Start()
         {

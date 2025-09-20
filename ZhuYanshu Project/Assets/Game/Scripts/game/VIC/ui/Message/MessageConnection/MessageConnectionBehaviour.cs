@@ -23,14 +23,21 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             chatData = c;
         }
 
-        public void SetMessage(MessagePrototype cm)
+        public void SetMessage(MessagePrototype m)
         {
-            this.coverMsg = cm;
+            this.coverMsg = m;
+            if (m.name == chatData.name)
+            {
+                txt_content.text = m.content;
+                img.sprite = m.sp;
+                txt_name.text = m.name;
+            }
+            else
+            {
+                txt_content.text = m.name + ": " + m.content;
+            }
 
-            img.sprite = cm.sp;
-            txt_name.text = cm.name;
-            txt_content.text = cm.content;
-            txt_time.text = cm.timeStr;
+            txt_time.text = m.timeStr;
         }
 
         public void Hide()
@@ -41,7 +48,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
         public void OnClick()
         {
-            Debug.Log("OnClick");
+            //Debug.Log("OnClick");
             ChatPanelSystem.instance.Show(chatData);
         }
 
@@ -56,14 +63,15 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public float duration_ShowAnimation;
         public CanvasGroup cg;
 
-     public  void PlayNoAnimation()
+        public void PlayNoAnimation()
         {
             //Debug.Log("PlayNoAnimation");
             cg.alpha = 1;
 
         }
-     public    void PlayRefreshAnimation()
+        public void PlayRefreshAnimation()
         {
+            // Debug.Log("PlayRefreshAnimation");
             //毛玻璃 alpha变化
             tImg.DOKill();
             var c = tImg.color;
@@ -73,7 +81,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             tImg.DOFade(endAlpha, duration_ShowAnimation);
         }
 
-    public    void PlayShowAnimation()
+        public void PlayShowAnimation()
         {
             //Debug.Log("PlayShowAnimation");
             cg.alpha = 0;

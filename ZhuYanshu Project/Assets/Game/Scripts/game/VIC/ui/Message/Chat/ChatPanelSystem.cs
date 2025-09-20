@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Message;
+using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,27 +17,27 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             instance = this;
         }
 
-        public void AddMessage(MessagePrototype m, bool isNewMessage)
+        public void AddMessageOfChat(string chatDataName, MessagePrototype m, bool isNewMessage)
         {
             ChatData targetMc = null;
             foreach (var mc in messageCaches)
             {
 
-                if (mc.messages.Count > 0 && mc.messages[0].name == m.name)
+                if (mc.messages.Count > 0 && mc.messages[0].name == chatDataName)
                 {
                     mc.messages.Add(m);
                     targetMc = mc;
-                     // MessageSystem.instance.renew?reddot??(m);
+                    MessageSystem.instance.RefreshMessageConnection(chatDataName, m, isNewMessage);
                 }
             }
 
             if (targetMc == null)
             {
                 targetMc = new ChatData();
-                targetMc.name = m.name;
+                targetMc.name = chatDataName;
                 targetMc.messages.Add(m);
                 messageCaches.Add(targetMc);
-                MessageSystem.instance.CreateConnection(targetMc,m,isNewMessage);
+                MessageSystem.instance.CreateConnection(targetMc, m, isNewMessage);
             }
         }
 
@@ -55,7 +56,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
         public void Show(ChatData cd)
         {
-            //show all chats of this message cache
+            //show all chats of this ChatData
             cpb.Clear();
             foreach (var p in cd.messages)
             {
@@ -69,9 +70,18 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
                 }
             }
 
-        }
-    }
 
+            var lastMessage = cd.messages[cd.messages.Count - 1];
+            ToggleDuolingoTextComposer(lastMessage.answerProto);
+        }
+
+        public void ToggleDuolingoTextComposer(MessageComposerPrototype p)
+        {
+
+        }
+
+    }
+    [System.Serializable]
     public class ChatData
     {
         public string name;

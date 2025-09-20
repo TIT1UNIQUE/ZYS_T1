@@ -22,10 +22,14 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
         void Start()
         {
-            foreach (var 默认消息 in 默认的几个消息)
+            foreach (var 默认消息 in 默认消息列表)
             {
-                AddMessage(默认消息, false);
+                foreach (var m in 默认消息.messages)
+                {
+                    AddMessageOfChat(默认消息.name, m, false);
+                }
             }
+
         }
 
         public void 初始化message系统()
@@ -37,30 +41,34 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         {
             yield return new WaitForSeconds(1f);
 
-            foreach (var 开头的消息 in 开头的几个消息)
+            foreach (var 开头的消息 in 开头接受的消息列表)
             {
-                yield return new WaitForSeconds(1);
-                AddMessage(开头的消息, true);
+                foreach (var m in 开头的消息.chatData.messages)
+                {
+                    yield return new WaitForSeconds(开头的消息.preDelay);
+                    AddMessageOfChat(开头的消息.chatData.name, m, true);
+                }
             }
         }
 
-        public void AddMessage(MessagePrototype p, bool isNewMessage)
+        public void AddMessageOfChat(string chatDataName, MessagePrototype p, bool isNewMessage)
         {
-            //var mc = ChatPanelSystem.instance.GetMessageCache(p.name);
-            ChatPanelSystem.instance.AddMessage(p,isNewMessage);
+            ChatPanelSystem.instance.AddMessageOfChat(chatDataName, p, isNewMessage);
 
             if (isNewMessage)
                 notifSystem.Add(p);
         }
 
-        public void RefreshMessageConnection(string name, MessagePrototype p)
+        public void RefreshMessageConnection(string name, MessagePrototype p, bool isNewMessage)
         {
+            //Debug.Log("RefreshMessageConnection chat " + name + ": " + p.name + " " + p.content);
             foreach (var con in connections)
             {
                 if (con.chatData.name == name)
                 {
                     con.SetMessage(p);
-                    con.PlayRefreshAnimation();
+                    if (isNewMessage)
+                        con.PlayRefreshAnimation();
                 }
             }
         }
@@ -82,7 +90,14 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             return mb;
         }
 
-        public MessagePrototype[] 开头的几个消息;
-        public MessagePrototype[] 默认的几个消息;
+        public ChatData[] 默认消息列表;
+        public MimicChatData[] 开头接受的消息列表;
+    }
+
+    [System.Serializable]
+    public class MimicChatData
+    {
+        public float preDelay;
+        public ChatData chatData;
     }
 }

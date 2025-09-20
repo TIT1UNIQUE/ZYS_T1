@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
+using System;
 using System.Collections;
 using System.Globalization;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
         public string content;
         public string name;
-
+        public MessageComposerPrototype answerProto;
         public SerializableDateTime sdt;
         public DateTime sendTime
         {
