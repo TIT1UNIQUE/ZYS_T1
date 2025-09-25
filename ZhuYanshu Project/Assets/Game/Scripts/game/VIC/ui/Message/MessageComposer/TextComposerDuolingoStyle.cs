@@ -14,7 +14,6 @@ namespace Assets.Game.Scripts.game.VIC.ui
         public float item_offsetY;
         List<ItemDuolingoStyle> crtItems = new List<ItemDuolingoStyle>();
 
-
         void CreateItem(string s, int i)
         {
             var newItem = Instantiate(prefab_ItemDuolingoStyle, prefab_ItemDuolingoStyle.transform.parent);

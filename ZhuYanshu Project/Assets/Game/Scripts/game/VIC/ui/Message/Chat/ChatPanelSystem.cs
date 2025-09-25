@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Message;
+using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,9 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
         public static ChatPanelSystem instance;
         public ChatPanelBehaviour cpb;
         public List<ChatData> messageCaches = new List<ChatData>();
+
+        public ChatKeyWordsSystem chatKeyWordsSystem;
+        public TextComposerDuolingoStyle textComposerDuolingo;
 
         private void Awake()
         {
@@ -70,17 +74,12 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
                 }
             }
 
-
             var lastMessage = cd.messages[cd.messages.Count - 1];
-            ToggleDuolingoTextComposer(lastMessage.answerProto);
+            textComposerDuolingo.Setup(lastMessage.answerProto);
+            chatKeyWordsSystem.Show(cd);
         }
-
-        public void ToggleDuolingoTextComposer(MessageComposerPrototype p)
-        {
-
-        }
-
     }
+
     [System.Serializable]
     public class ChatData
     {

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 
 namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 {
