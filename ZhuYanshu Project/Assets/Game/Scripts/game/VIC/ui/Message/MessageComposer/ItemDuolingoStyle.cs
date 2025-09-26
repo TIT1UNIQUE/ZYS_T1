@@ -31,6 +31,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
         public void OnClick()
         {
             textComposer.TryMoveMe(this);
+            textComposer.UpdateSubmitState();
         }
     }
 }

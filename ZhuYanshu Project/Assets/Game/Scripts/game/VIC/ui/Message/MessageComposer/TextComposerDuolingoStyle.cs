@@ -2,21 +2,39 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace Assets.Game.Scripts.game.VIC.ui
 {
     public class TextComposerDuolingoStyle : MonoBehaviour
     {
-        public ItemDuolingoStyle prefab_ItemDuolingoStyle;
+        public ItemDuolingoStyle prefab_item;
+        public SlotDuolingoStyle prefab_slot;
+
         public Vector2 item_startAnchoredPos;
         public float item_offsetX;
         public float item_offsetY;
-        List<ItemDuolingoStyle> crtItems = new List<ItemDuolingoStyle>();
+
+
+        public CanvasGroup cg;
+        List<SlotDuolingoStyle> slots = new List<SlotDuolingoStyle>();
+        List<ItemDuolingoStyle> items = new List<ItemDuolingoStyle>();
+
+        public TextMeshProUGUI bodyText;
+        MessageComposerPrototype currentMcp;
+
+        public GameObject submitButton;
+
+        private void Start()
+        {
+            submitButton.SetActive(false);
+        }
 
         void CreateItem(string s, int i)
         {
-            var newItem = Instantiate(prefab_ItemDuolingoStyle, prefab_ItemDuolingoStyle.transform.parent);
+            var newItem = Instantiate(prefab_item, prefab_item.transform.parent);
             int line = 0;
             int row = i;
 
@@ -34,12 +52,19 @@ namespace Assets.Game.Scripts.game.VIC.ui
             newItem.Init(anchoredPos, s);
             newItem.gameObject.SetActive(true);
 
-            crtItems.Add(newItem);
+            items.Add(newItem);
         }
+        void CreateBlank(MessageBlank b, int blankIndex)
+        {
+            var newSlot = Instantiate(prefab_slot, prefab_slot.transform.parent);
+            newSlot.Init(b.anchorPos, blankIndex, b.correctAnswerIndex);
+            newSlot.gameObject.SetActive(true);
 
+            slots.Add(newSlot);
+        }
         public bool TryMoveMe(ItemDuolingoStyle item)
         {
-            float moveTime = 0.6f;
+            float moveTime = 0.5f;
             if (item.state == ItemDuolingoStyle.State.Pending)
             {
                 foreach (var s in slots)
@@ -72,15 +97,46 @@ namespace Assets.Game.Scripts.game.VIC.ui
             return false;
         }
 
+        public void UpdateSubmitState()
+        {
+            var allFilled = true;
+            foreach (var s in slots)
+            {
+                if (s.crtItem == null)
+                {
+                    allFilled = false;
+                }
+            }
 
-        public CanvasGroup cg;
-        public List<SlotDuolingoStyle> slots;
-        public List<string> itemWords;
+            submitButton.SetActive(allFilled);
+            //todo evaluation score
+            //currentMcp;
+        }
+
+        void ClearSlots()
+        {
+            foreach (var s in slots)
+            {
+                Destroy(s.gameObject);
+            }
+            slots.Clear();
+        }
+        void ClearOptions()
+        {
+            foreach (var s in items)
+            {
+                Destroy(s.gameObject);
+            }
+            items.Clear();
+        }
 
         public void Setup(MessageComposerPrototype mcp)
         {
-            Debug.Log("TextComposerDuolingoStyle Setup");
-            Debug.Log(mcp);
+            //Debug.Log("TextComposerDuolingoStyle Setup");
+            //Debug.Log(mcp);
+            currentMcp = mcp;
+            submitButton.SetActive(false);
+
             if (mcp == null)
             {
                 cg.alpha = 0;
@@ -88,17 +144,25 @@ namespace Assets.Game.Scripts.game.VIC.ui
             }
             else
             {
-                if (mcp == null)
-                {
-                    cg.alpha = 1;
-                    cg.blocksRaycasts = true;
+                ClearSlots();
+                ClearOptions();
+                cg.alpha = 1;
+                cg.blocksRaycasts = true;
 
-                    int i = 0;
-                    foreach (var iw in itemWords)
-                    {
-                        CreateItem(iw, i);
-                        i++;
-                    }
+                bodyText.text = mcp.rawText;
+
+                int i = 0;
+                foreach (var b in mcp.blanks)
+                {
+                    CreateBlank(b, i);
+                    i++;
+                }
+
+                i = 0;
+                foreach (var iw in mcp.options)
+                {
+                    CreateItem(iw, i);
+                    i++;
                 }
             }
         }

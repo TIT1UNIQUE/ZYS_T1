@@ -24,6 +24,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
         private void Start()
         {
+            textComposerDuolingo.Setup(null);
+
             for (int i = 0; i < personalTransParent.childCount; i++)
             {
                 var c = personalTransParent.GetChild(i);
