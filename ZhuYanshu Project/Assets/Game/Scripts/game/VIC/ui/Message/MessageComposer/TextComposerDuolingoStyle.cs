@@ -79,6 +79,8 @@ namespace Assets.Game.Scripts.game.VIC.ui
 
         public void Setup(MessageComposerPrototype mcp)
         {
+            Debug.Log("TextComposerDuolingoStyle Setup");
+            Debug.Log(mcp);
             if (mcp == null)
             {
                 cg.alpha = 0;

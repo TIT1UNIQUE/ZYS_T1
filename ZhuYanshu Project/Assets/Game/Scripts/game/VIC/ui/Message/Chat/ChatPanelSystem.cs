@@ -13,14 +13,23 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
         public ChatPanelBehaviour cpb;
         public List<ChatData> messageCaches = new List<ChatData>();
 
-        public ChatKeyWordsSystem chatKeyWordsSystem;
+        //public ChatKeyWordsSystem chatKeyWordsSystem;
         public TextComposerDuolingoStyle textComposerDuolingo;
+        public Transform personalTransParent;//use to find the personal exist in the scene
 
         private void Awake()
         {
             instance = this;
         }
 
+        private void Start()
+        {
+            for (int i = 0; i < personalTransParent.childCount; i++)
+            {
+                var c = personalTransParent.GetChild(i);
+                c.gameObject.SetActive(false);
+            }
+        }
         public void AddMessageOfChat(string chatDataName, MessagePrototype m, bool isNewMessage)
         {
             ChatData targetMc = null;
@@ -38,6 +47,18 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             if (targetMc == null)
             {
                 targetMc = new ChatData();
+                Debug.Log("create ChatData for " + chatDataName);
+                for (int i = 0; i < personalTransParent.childCount; i++)
+                {
+                    var c = personalTransParent.GetChild(i);
+                    if (c.gameObject.name.Contains(chatDataName))
+                    {
+                        targetMc.personalParent = c.gameObject;
+                        Debug.Log("personal found");
+                        break;
+                    }
+                }
+
                 targetMc.name = chatDataName;
                 targetMc.messages.Add(m);
                 messageCaches.Add(targetMc);
@@ -76,7 +97,12 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
             var lastMessage = cd.messages[cd.messages.Count - 1];
             textComposerDuolingo.Setup(lastMessage.answerProto);
-            chatKeyWordsSystem.Show(cd);
+            //chatKeyWordsSystem.Show(cd);
+            for (int i = 0; i < personalTransParent.childCount; i++)
+            {
+                var c = personalTransParent.GetChild(i);
+                c.gameObject.SetActive(c.gameObject == cd.personalParent);
+            }
         }
     }
 
@@ -84,6 +110,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
     public class ChatData
     {
         public string name;
+        public GameObject personalParent;
         public List<MessagePrototype> messages = new List<MessagePrototype>();
     }
 }
