@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -23,7 +24,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
         List<ItemDuolingoStyle> items = new List<ItemDuolingoStyle>();
 
         public TextMeshProUGUI bodyText;
-        MessageComposerPrototype currentMcp;
+        public MessageComposerPrototype currentMcp { get; private set; }
 
         public GameObject submitButton;
 
@@ -132,8 +133,8 @@ namespace Assets.Game.Scripts.game.VIC.ui
 
         public void Setup(MessageComposerPrototype mcp)
         {
-            //Debug.Log("TextComposerDuolingoStyle Setup");
-            //Debug.Log(mcp);
+            Debug.Log("TextComposerDuolingoStyle Setup");
+            Debug.Log(mcp);
             currentMcp = mcp;
             submitButton.SetActive(false);
 
@@ -165,6 +166,60 @@ namespace Assets.Game.Scripts.game.VIC.ui
                     i++;
                 }
             }
+        }
+
+        public List<string> GetOptionsString()
+        {
+            List<string> res = new List<string>();
+            foreach (var s in slots)
+            {
+                res.Add(s.crtItem.txt.text);
+            }
+            return res;
+        }
+
+        public (int, int) GetScoreOfTotalScore()
+        {
+            var res = (0, 0);
+            return res;
+        }
+
+        public string GetFinalString()
+        {
+            var s = currentMcp.rawText;
+            Debug.Log("GetFinalString rawText: " + s);
+            var options = GetOptionsString();
+            var res = FillBlanks(s, options);
+            Debug.Log("finalString: " + res);
+            return res;
+        }
+
+        public static string FillBlanks(string s, List<string> options)
+        {
+            if (string.IsNullOrEmpty(s) || options == null || options.Count == 0)
+                return s;
+
+            const string blank = "________";          // 8 underscores
+            int idx = 0;
+            var sb = new System.Text.StringBuilder(s.Length);
+
+            for (int i = 0; i < s.Length;)
+            {
+                // quick check: enough characters left for a match?
+                if (i + blank.Length <= s.Length &&
+                    s.AsSpan(i, blank.Length).SequenceEqual(blank))
+                {
+                    // found a blank – replace if we still have options
+                    sb.Append(idx < options.Count ? options[idx++] : blank);
+                    i += blank.Length;
+                }
+                else
+                {
+                    // ordinary character
+                    sb.Append(s[i++]);
+                }
+            }
+            return sb.ToString();
         }
     }
 }

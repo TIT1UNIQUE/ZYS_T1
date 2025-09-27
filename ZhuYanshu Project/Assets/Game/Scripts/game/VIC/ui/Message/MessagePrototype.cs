@@ -10,19 +10,14 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
     public class MessagePrototype
     {
         public Sprite sp;
-
         public string content;
         public string name;
         public MessageComposerPrototype answerProto;
         public SerializableDateTime sdt;
         public DateTime sendTime
         {
-            get
-            {
-                return sdt.ToDateTime();
-            }
+            get { return sdt.ToDateTime(); }
         }
-
         public string timeStr
         {
             get { return sendTime.ToString("h:mm tt", CultureInfo.InvariantCulture); }

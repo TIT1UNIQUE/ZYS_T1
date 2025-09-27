@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.ChatPanel;
 using Assets.Game.Scripts.game.VIC.ui.notif;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
         public MessageConnectionBehaviour messagePrefab;
         public NotifSystem notifSystem;
+        public Sprite selfSp;
+        public string selfName;
 
         private void Awake()
         {
@@ -49,6 +52,29 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
                     AddMessageOfChat(开头的消息.chatData.name, m, true);
                 }
             }
+        }
+
+        public void AddMessageOfChat_now_myReply(string content)
+        {
+            var chat = ChatPanelSystem.instance.currentChatData;
+            MessagePrototype msg = new MessagePrototype();
+            msg.name=selfName;
+            msg.sp = selfSp;
+            msg.content=content;
+            msg.sdt = DateTime.Now;
+
+            ChatPanelSystem.instance.AddMessageOfChat(chat.name, msg, true);
+        }
+
+        public void AddMessageOfChat_now_remoteReply(string chatDataName, string content, bool isNewMessage)
+        {
+              var chat = ChatPanelSystem.instance.GetChatData(chatDataName);
+            MessagePrototype msg = new MessagePrototype();
+            msg.name=chat.name;
+            msg.sp = chat.sp;
+            msg.content=content;
+            msg.sdt = DateTime.Now;
+            ChatPanelSystem.instance.AddMessageOfChat(chatDataName, msg, true);
         }
 
         public void AddMessageOfChat(string chatDataName, MessagePrototype p, bool isNewMessage)

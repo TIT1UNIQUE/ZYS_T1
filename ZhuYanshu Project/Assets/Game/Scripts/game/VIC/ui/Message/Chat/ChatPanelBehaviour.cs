@@ -1,13 +1,14 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Message;
+using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
 using DG.Tweening;
 using LeTai.Asset.TranslucentImage;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 
 namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 {
@@ -48,6 +49,12 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
                 Destroy(c.gameObject);
             }
             currentChats.Clear();
+        }
+
+        public void OnClickSubmit()
+        {
+            Debug.Log("OnClickSubmit");
+            MessageSystem.instance.AddMessageOfChat_now_myReply(textComposer.GetFinalString());
         }
     }
 }

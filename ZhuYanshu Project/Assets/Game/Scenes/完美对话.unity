@@ -2325,7 +2325,7 @@ MonoBehaviour:
   prefab_itemSelf: {fileID: 2120969740}
   chatParent: {fileID: 908085182}
   currentChats: []
-  textComposer: {fileID: 0}
+  textComposer: {fileID: 907071905}
 --- !u!1 &247223087
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,6 +4652,7 @@ GameObject:
   - component: {fileID: 477356974}
   - component: {fileID: 477356972}
   - component: {fileID: 477356975}
+  - component: {fileID: 477356976}
   m_Layer: 5
   m_Name: Main Panel
   m_TagString: Untagged
@@ -4729,6 +4730,63 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &477356976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477356970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 477356975}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 243808593}
+        m_TargetAssemblyTypeName: Assets.Game.Scripts.game.VIC.ui.ChatPanel.ChatPanelBehaviour,
+          Assembly-CSharp
+        m_MethodName: OnClickSubmit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &479011868
 GameObject:
   m_ObjectHideFlags: 0
@@ -9474,9 +9532,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cpb: {fileID: 243808593}
-  messageCaches: []
+  chats: []
   textComposerDuolingo: {fileID: 907071905}
   personalTransParent: {fileID: 1121824643}
+  currentChatData:
+    name: 
+    sp: {fileID: 0}
+    personalParent: {fileID: 0}
+    messages: []
 --- !u!114 &907071905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10878,8 +10941,11 @@ MonoBehaviour:
   connections: []
   messagePrefab: {fileID: 6672175590855137375}
   notifSystem: {fileID: 996382725}
+  selfSp: {fileID: 21300000, guid: 4ee2bf1447335c944a6add1dcaef0852, type: 3}
+  selfName: Me
   "\u9ED8\u8BA4\u6D88\u606F\u5217\u8868":
   - name: Evan
+    sp: {fileID: 0}
     personalParent: {fileID: 0}
     messages:
     - sp: {fileID: 21300000, guid: 43069e8fba4923d47bc6fd6ace1be0d4, type: 3}
@@ -10905,6 +10971,7 @@ MonoBehaviour:
         Minute: 11
         Second: 25
   - name: Paul
+    sp: {fileID: 0}
     personalParent: {fileID: 0}
     messages:
     - sp: {fileID: 21300000, guid: 82577cfb5dbada24793ad05334fff745, type: 3}
@@ -10930,6 +10997,7 @@ MonoBehaviour:
         Minute: 11
         Second: 25
   - name: David
+    sp: {fileID: 0}
     personalParent: {fileID: 0}
     messages:
     - sp: {fileID: 21300000, guid: 599072f5bd015ba408b8276e7e90ddbe, type: 3}
@@ -10944,6 +11012,7 @@ MonoBehaviour:
         Minute: 11
         Second: 22
   - name: Lily
+    sp: {fileID: 0}
     personalParent: {fileID: 0}
     messages:
     - sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
@@ -10961,6 +11030,7 @@ MonoBehaviour:
   - preDelay: 0.6
     chatData:
       name: Boss
+      sp: {fileID: 0}
       personalParent: {fileID: 0}
       messages:
       - sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
@@ -22002,7 +22072,7 @@ GameObject:
   - component: {fileID: 1960630477}
   - component: {fileID: 1960630478}
   m_Layer: 5
-  m_Name: Send
+  m_Name: Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
