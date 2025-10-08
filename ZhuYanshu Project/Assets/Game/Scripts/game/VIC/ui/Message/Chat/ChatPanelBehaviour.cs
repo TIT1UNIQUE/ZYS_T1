@@ -32,6 +32,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             cb.Show(proto);
 
             currentChats.Add(cb);
+            ScrollDown();
         }
         public void AddRemote(MessagePrototype proto)
         {
@@ -40,6 +41,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             cb.Show(proto);
 
             currentChats.Add(cb);
+            ScrollDown();
         }
 
         public void Clear()
@@ -54,7 +56,29 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
         public void OnClickSubmit()
         {
             Debug.Log("OnClickSubmit");
+            var r = textComposer.currentMcp.reply;
             MessageSystem.instance.AddMessageOfChat_now_myReply(textComposer.GetFinalString());
+            com.SoundSystem.instance.Play("do");
+            //Debug.Log(r);
+            if (r != null)
+            {
+                //Debug.Log(r.content);
+                var chatDataName = ChatPanelSystem.instance.currentChatData.name;
+                StartCoroutine(
+                    MainScreenSystem.instance.DelayActionIE(
+                       2.5f,
+                        () => { MessageSystem.instance.AddMessageOfChat_now_remote(chatDataName, r); }
+                       )
+                    );
+            }
+        }
+
+        public Canvas canvas;
+        public ScrollRect scrollRect;
+        public void ScrollDown()
+        {
+            Canvas.ForceUpdateCanvases();   // make sure layouts rebuilt
+            scrollRect.DOVerticalNormalizedPos(0, 0.35f);
         }
     }
 }

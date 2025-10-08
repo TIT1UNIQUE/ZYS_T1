@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class MainScreenSystem : MonoBehaviour
 {
+    public static MainScreenSystem instance;
     public CanvasGroup cg_Welcome;
     public CanvasGroup cg_Desktop;
     public CanvasGroup cg_Mail;
@@ -56,6 +57,11 @@ public class MainScreenSystem : MonoBehaviour
 
     public bool testMainGame;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         if (testMainGame)
@@ -80,12 +86,13 @@ public class MainScreenSystem : MonoBehaviour
 
     void ShowWelcomeScreen()
     {
+        com.SoundSystem.instance.Play("ding");
         ToggleCanvasGroup(cg_Welcome, true, animationDuration_long);
 
         StartCoroutine(DelayActionIE(2.7f, HideWelcomeScreenAndShowDesktop));
     }
 
-    IEnumerator DelayActionIE(float delay, Action action)
+    public IEnumerator DelayActionIE(float delay, Action action)
     {
         yield return new WaitForSeconds(delay);
         action?.Invoke();
@@ -116,6 +123,7 @@ public class MainScreenSystem : MonoBehaviour
 
     public void OnClickEmail()
     {
+        com.SoundSystem.instance.Play("do");
         openningEmail.DOAnchorPos(openningEmail_start.anchoredPosition, animationDuration_short).OnComplete(ShowEmail);
     }
 
@@ -129,12 +137,14 @@ public class MainScreenSystem : MonoBehaviour
 
     void Show_popup_warning_closeMail()
     {
+        com.SoundSystem.instance.Play("ding");
         ToggleCanvasGroup(cg_popup_warning_closeMail, true, animationDuration_short);
         bcg.enabled = true;
     }
 
     public void OnClickClose_popup_warning_closeMail()
     {
+        com.SoundSystem.instance.Play("tap");
         bcg.enabled = false;
         ToggleCanvasGroup(cg_Mail, false, 0);
         ToggleCanvasGroup(cg_popup_warning_closeMail, false, animationDuration_mid);
@@ -142,6 +152,7 @@ public class MainScreenSystem : MonoBehaviour
 
     public void OnClick_AppIcon()
     {
+        com.SoundSystem.instance.Play("do");
         ToggleCanvasGroup(cg_App, true, animationDuration_short);
         MessageSystem.instance.初始化message系统();
     }

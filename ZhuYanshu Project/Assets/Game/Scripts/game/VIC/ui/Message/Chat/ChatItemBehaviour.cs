@@ -31,7 +31,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
         public void OnClick()
         {
-
+             com.SoundSystem.instance.Play("tap");
         }
     }
 }

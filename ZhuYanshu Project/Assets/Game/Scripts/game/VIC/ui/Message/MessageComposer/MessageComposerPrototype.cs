@@ -15,6 +15,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer
         public MessageBlank[] blanks;
 
         public string 备注;
+        public MessagePrototype reply;
     }
 
     [System.Serializable]

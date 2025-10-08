@@ -9,11 +9,23 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
     [Serializable]
     public class MessagePrototype
     {
+        public BriefIsRemoteType briefIsRemote = BriefIsRemoteType.NotSet;
+        public enum BriefIsRemoteType
+        {
+            NotSet,
+            Self,
+            Remote,
+        }
         public Sprite sp;
-        public string content;
         public string name;
+        public string content;
         public MessageComposerPrototype answerProto;
         public SerializableDateTime sdt;
+        /// <summary>
+        ///if briefIsRemote ==true, use the chat data's sp and name
+        ///if briefIsRemote ==false, use the player's sp and name
+        /// </summary>
+
         public DateTime sendTime
         {
             get { return sdt.ToDateTime(); }

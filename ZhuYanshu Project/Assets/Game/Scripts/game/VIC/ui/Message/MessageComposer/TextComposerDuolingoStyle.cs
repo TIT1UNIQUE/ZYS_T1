@@ -55,6 +55,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
 
             items.Add(newItem);
         }
+
         void CreateBlank(MessageBlank b, int blankIndex)
         {
             var newSlot = Instantiate(prefab_slot, prefab_slot.transform.parent);
@@ -63,6 +64,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
 
             slots.Add(newSlot);
         }
+
         public bool TryMoveMe(ItemDuolingoStyle item)
         {
             float moveTime = 0.5f;
@@ -122,6 +124,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
             }
             slots.Clear();
         }
+
         void ClearOptions()
         {
             foreach (var s in items)
@@ -187,7 +190,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
         public string GetFinalString()
         {
             var s = currentMcp.rawText;
-            Debug.Log("GetFinalString rawText: " + s);
+            //Debug.Log("GetFinalString rawText: " + s);
             var options = GetOptionsString();
             var res = FillBlanks(s, options);
             Debug.Log("finalString: " + res);

@@ -2326,6 +2326,8 @@ MonoBehaviour:
   chatParent: {fileID: 908085182}
   currentChats: []
   textComposer: {fileID: 907071905}
+  canvas: {fileID: 1265924477}
+  scrollRect: {fileID: 496064776}
 --- !u!1 &247223087
 GameObject:
   m_ObjectHideFlags: 0
@@ -9753,6 +9755,7 @@ Transform:
   m_Children:
   - {fileID: 12951862}
   - {fileID: 979952215}
+  - {fileID: 1601179655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &924916275
@@ -10948,9 +10951,10 @@ MonoBehaviour:
     sp: {fileID: 0}
     personalParent: {fileID: 0}
     messages:
-    - sp: {fileID: 21300000, guid: 43069e8fba4923d47bc6fd6ace1be0d4, type: 3}
-      content: Eat KFC this evening?
+    - briefIsRemote: 0
+      sp: {fileID: 21300000, guid: 43069e8fba4923d47bc6fd6ace1be0d4, type: 3}
       name: Evan
+      content: Eat KFC this evening?
       answerProto: {fileID: 0}
       sdt:
         Year: 2025
@@ -10959,9 +10963,10 @@ MonoBehaviour:
         Hour: 10
         Minute: 11
         Second: 22
-    - sp: {fileID: 21300000, guid: 4ee2bf1447335c944a6add1dcaef0852, type: 3}
-      content: okok
+    - briefIsRemote: 0
+      sp: {fileID: 21300000, guid: 4ee2bf1447335c944a6add1dcaef0852, type: 3}
       name: Me
+      content: okok
       answerProto: {fileID: 0}
       sdt:
         Year: 2025
@@ -10974,9 +10979,10 @@ MonoBehaviour:
     sp: {fileID: 0}
     personalParent: {fileID: 0}
     messages:
-    - sp: {fileID: 21300000, guid: 82577cfb5dbada24793ad05334fff745, type: 3}
-      content: Eat KFC this evening?
+    - briefIsRemote: 0
+      sp: {fileID: 21300000, guid: 82577cfb5dbada24793ad05334fff745, type: 3}
       name: Paul
+      content: Eat KFC this evening?
       answerProto: {fileID: 0}
       sdt:
         Year: 2025
@@ -10985,9 +10991,10 @@ MonoBehaviour:
         Hour: 10
         Minute: 11
         Second: 22
-    - sp: {fileID: 21300000, guid: 4ee2bf1447335c944a6add1dcaef0852, type: 3}
-      content: okok
+    - briefIsRemote: 0
+      sp: {fileID: 21300000, guid: 4ee2bf1447335c944a6add1dcaef0852, type: 3}
       name: Me
+      content: okok
       answerProto: {fileID: 11400000, guid: 4f429af0e556ece408ab6b2d6d9952c2, type: 2}
       sdt:
         Year: 2025
@@ -11000,9 +11007,10 @@ MonoBehaviour:
     sp: {fileID: 0}
     personalParent: {fileID: 0}
     messages:
-    - sp: {fileID: 21300000, guid: 599072f5bd015ba408b8276e7e90ddbe, type: 3}
-      content: Eat KFC this evening?
+    - briefIsRemote: 0
+      sp: {fileID: 21300000, guid: 599072f5bd015ba408b8276e7e90ddbe, type: 3}
       name: David
+      content: Eat KFC this evening?
       answerProto: {fileID: 0}
       sdt:
         Year: 2025
@@ -11011,14 +11019,15 @@ MonoBehaviour:
         Hour: 10
         Minute: 11
         Second: 22
-  - name: Lily
-    sp: {fileID: 0}
+  - name: Peacock Penny
+    sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
     personalParent: {fileID: 0}
     messages:
-    - sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
+    - briefIsRemote: 2
+      sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
+      name: Peacock Penny
       content: Hello
-      name: Lily
-      answerProto: {fileID: 0}
+      answerProto: {fileID: 11400000, guid: 2360bc84d80870244aaad6dd4009367a, type: 2}
       sdt:
         Year: 2025
         Month: 9
@@ -11033,9 +11042,10 @@ MonoBehaviour:
       sp: {fileID: 0}
       personalParent: {fileID: 0}
       messages:
-      - sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
+      - briefIsRemote: 0
+        sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
+        name: Boss
         content: Come here now!!!
-        name: Boss
         answerProto: {fileID: 0}
         sdt:
           Year: 2025
@@ -11044,9 +11054,10 @@ MonoBehaviour:
           Hour: 9
           Minute: 58
           Second: 55
-      - sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
+      - briefIsRemote: 0
+        sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
+        name: Boss
         content: Time is short
-        name: Boss
         answerProto: {fileID: 0}
         sdt:
           Year: 2025
@@ -11055,9 +11066,10 @@ MonoBehaviour:
           Hour: 9
           Minute: 58
           Second: 55
-      - sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
-        content: VIP client coming!!!!!!!!
+      - briefIsRemote: 0
+        sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
         name: Boss
+        content: VIP client coming!!!!!!!!
         answerProto: {fileID: 0}
         sdt:
           Year: 2025
@@ -11066,9 +11078,10 @@ MonoBehaviour:
           Hour: 10
           Minute: 11
           Second: 22
-      - sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
-        content: VIP client coming!!!!!!!!
+      - briefIsRemote: 0
+        sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
         name: Boss
+        content: VIP client coming!!!!!!!!
         answerProto: {fileID: 0}
         sdt:
           Year: 2025
@@ -11077,9 +11090,10 @@ MonoBehaviour:
           Hour: 10
           Minute: 11
           Second: 22
-      - sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
-        content: VIP client coming!!!!!!!!
+      - briefIsRemote: 0
+        sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
         name: Boss
+        content: VIP client coming!!!!!!!!
         answerProto: {fileID: 0}
         sdt:
           Year: 2025
@@ -11088,9 +11102,10 @@ MonoBehaviour:
           Hour: 10
           Minute: 11
           Second: 22
-      - sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
-        content: VIP client coming!!!!!!!!
+      - briefIsRemote: 0
+        sp: {fileID: 21300000, guid: 01dc4e49cb7a01148b3e46db764deb1e, type: 3}
         name: Boss
+        content: VIP client coming!!!!!!!!
         answerProto: {fileID: 11400000, guid: 7852fad6858024d449db48e325e9fcbe, type: 2}
         sdt:
           Year: 2025
@@ -18081,6 +18096,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7825685128104310153, guid: 72cca47643533904a8fd6599c6a74cc5, type: 3}
   m_PrefabInstance: {fileID: 779849501}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1601179654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601179655}
+  - component: {fileID: 1601179656}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601179655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601179654}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 924916274}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1601179656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601179654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7e0cc04d848ab43b117577c3d696fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundList:
+  - tag: ui
+    siList:
+    - name: tap
+      ac: {fileID: 8300000, guid: 72b748bd68ded0a44acf7c208b8971b0, type: 3}
+    - name: do
+      ac: {fileID: 8300000, guid: 3e2147572fccf2a49900f6ec8fb6e110, type: 3}
+    - name: ding
+      ac: {fileID: 8300000, guid: 8ca77f581e8d8f047b2d6477f3192773, type: 3}
+    - name: msg come
+      ac: {fileID: 8300000, guid: 911a5bab319c8d04ab46cf5e4bd10de5, type: 3}
+    - name: pay
+      ac: {fileID: 8300000, guid: 846f8fe4aeb69be428d0c10ba208a008, type: 3}
 --- !u!1001 &1603190542
 PrefabInstance:
   m_ObjectHideFlags: 0

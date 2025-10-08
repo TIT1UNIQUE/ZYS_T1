@@ -26,12 +26,15 @@ namespace Assets.Game.Scripts.game.VIC.ui
             startPos = p_startPos; s = p_s;
             state = State.Pending;
             txt.text = s;
+
+            textComposer.UpdateSubmitState();
         }
 
         public void OnClick()
         {
             textComposer.TryMoveMe(this);
             textComposer.UpdateSubmitState();
+            com.SoundSystem.instance.Play("tap");
         }
     }
 }

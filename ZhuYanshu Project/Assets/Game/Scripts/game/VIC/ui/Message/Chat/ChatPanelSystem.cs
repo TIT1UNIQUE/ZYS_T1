@@ -37,51 +37,68 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
         public void AddMessageOfChat(string chatDataName, MessagePrototype m, bool isNewMessage)
         {
-            ChatData targetMc = null;
-            foreach (var mc in chats)
+            ChatData targetChatData = null;
+            foreach (var chat in chats)
             {
 
-                if (mc.messages.Count > 0 && mc.messages[0].name == chatDataName)
+                if (chat.messages.Count > 0 && chat.messages[0].name == chatDataName)
                 {
-                    mc.messages.Add(m);
-                    targetMc = mc;
+                    chat.messages.Add(m);
+                    targetChatData = chat;
                     MessageSystem.instance.RefreshMessageConnection(chatDataName, m, isNewMessage);
                 }
             }
 
-            if (targetMc == null)
+            if (targetChatData == null)
             {
-                targetMc = new ChatData();
+                targetChatData = new ChatData();
                 Debug.Log("create ChatData for " + chatDataName);
                 for (int i = 0; i < personalTransParent.childCount; i++)
                 {
                     var c = personalTransParent.GetChild(i);
                     if (c.gameObject.name.Contains(chatDataName))
                     {
-                        targetMc.personalParent = c.gameObject;
+                        targetChatData.personalParent = c.gameObject;
                         Debug.Log("personal found");
                         break;
                     }
                 }
 
-                targetMc.name = chatDataName;
-                targetMc.sp = m.sp;
-                targetMc.messages.Add(m);
-                chats.Add(targetMc);
-                MessageSystem.instance.CreateConnection(targetMc, m, isNewMessage);
+                targetChatData.name = chatDataName;
+                if (targetChatData.sp == null && m.sp != null)
+                {
+                    targetChatData.sp = m.sp;
+                }
+
+                targetChatData.messages.Add(m);
+                chats.Add(targetChatData);
+                MessageSystem.instance.CreateConnection(targetChatData, m, isNewMessage);
             }
 
             if (currentChatData != null && currentChatData.name == chatDataName)
             {
+                bool isRemote = false;
+                switch (m.briefIsRemote)
+                {
+                    case MessagePrototype.BriefIsRemoteType.NotSet:
+                        isRemote = m.name == currentChatData.name;
+                        break;
+                    case MessagePrototype.BriefIsRemoteType.Self:
+                        m.name = MessageSystem.instance.selfName;
+                        m.sp = MessageSystem.instance.selfSp;
+                        isRemote = false;
+                        break;
+                    case MessagePrototype.BriefIsRemoteType.Remote:
+                        m.name = currentChatData.name;
+                        m.sp = currentChatData.sp;
+                        isRemote = true;
+                        break;
+                }
                 textComposerDuolingo.Setup(m.answerProto);
-                if (m.name == currentChatData.name)
-                {
+                if (isRemote)
                     cpb.AddRemote(m);
-                }
                 else
-                {
                     cpb.AddSelf(m);
-                }
             }
         }
 
@@ -131,6 +148,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
     {
         public string name;
         public Sprite sp;
+        [HideInInspector]
         public GameObject personalParent;
         public List<MessagePrototype> messages = new List<MessagePrototype>();
     }

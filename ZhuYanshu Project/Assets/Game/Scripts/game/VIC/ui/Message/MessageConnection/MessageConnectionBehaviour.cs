@@ -26,8 +26,18 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public void SetMessage(MessagePrototype m)
         {
             this.coverMsg = m;
+
             if (m.name == chatData.name)
             {
+                //Debug.Log("SetMessage " + chatData.name);
+                if (m.sp == null && chatData.sp != null)
+                    m.sp = chatData.sp;
+                if (string.IsNullOrEmpty(m.name) && !string.IsNullOrEmpty(chatData.name))
+                    m.name = chatData.name;
+                //Debug.Log(m.content);
+                //Debug.Log(m.name);
+                //Debug.Log(chatData.sp);
+                //Debug.Log(m.sp);
                 txt_content.text = m.content;
                 img.sprite = m.sp;
                 txt_name.text = m.name;

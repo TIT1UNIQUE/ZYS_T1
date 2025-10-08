@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using Assets.Game.Scripts.game.VIC.ui.Message;
+using com;
 
 namespace Assets.Game.Scripts.game.VIC.ui.notif
 {
@@ -32,6 +33,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
 
             hide = false;
             StartCoroutine(HideSelf());
+            com.SoundSystem.instance.Play("msg come");
         }
 
         IEnumerator HideSelf()

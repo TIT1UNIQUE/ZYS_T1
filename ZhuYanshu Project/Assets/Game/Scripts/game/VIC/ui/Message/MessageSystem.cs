@@ -32,7 +32,6 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
                     AddMessageOfChat(默认消息.name, m, false);
                 }
             }
-
         }
 
         public void 初始化message系统()
@@ -58,23 +57,21 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         {
             var chat = ChatPanelSystem.instance.currentChatData;
             MessagePrototype msg = new MessagePrototype();
-            msg.name=selfName;
+            msg.name = selfName;
             msg.sp = selfSp;
-            msg.content=content;
+            msg.content = content;
             msg.sdt = DateTime.Now;
 
             ChatPanelSystem.instance.AddMessageOfChat(chat.name, msg, true);
         }
 
-        public void AddMessageOfChat_now_remoteReply(string chatDataName, string content, bool isNewMessage)
+        public void AddMessageOfChat_now_remote(string chatDataName, MessagePrototype m)
         {
-              var chat = ChatPanelSystem.instance.GetChatData(chatDataName);
-            MessagePrototype msg = new MessagePrototype();
-            msg.name=chat.name;
-            msg.sp = chat.sp;
-            msg.content=content;
-            msg.sdt = DateTime.Now;
-            ChatPanelSystem.instance.AddMessageOfChat(chatDataName, msg, true);
+            var chat = ChatPanelSystem.instance.currentChatData;
+            //m.name = chat.name;
+            //m.sp = chat.sp;
+            m.sdt = DateTime.Now;
+            AddMessageOfChat(chatDataName, m, true);
         }
 
         public void AddMessageOfChat(string chatDataName, MessagePrototype p, bool isNewMessage)
