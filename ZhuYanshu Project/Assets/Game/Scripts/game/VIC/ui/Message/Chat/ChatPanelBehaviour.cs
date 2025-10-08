@@ -57,6 +57,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
         {
             Debug.Log("OnClickSubmit");
             var r = textComposer.currentMcp.reply;
+            var d = textComposer.currentMcp.replyDelay;
             MessageSystem.instance.AddMessageOfChat_now_myReply(textComposer.GetFinalString());
             com.SoundSystem.instance.Play("do");
             //Debug.Log(r);
@@ -66,7 +67,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
                 var chatDataName = ChatPanelSystem.instance.currentChatData.name;
                 StartCoroutine(
                     MainScreenSystem.instance.DelayActionIE(
-                       2.5f,
+                     d,
                         () => { MessageSystem.instance.AddMessageOfChat_now_remote(chatDataName, r); }
                        )
                     );

@@ -357,7 +357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 7.6542, y: 0}
+  m_AnchoredPosition: {x: 7.6541977, y: 0}
   m_SizeDelta: {x: 190.2527, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &41438314
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 182957772}
   - component: {fileID: 182957771}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3053,7 +3053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -34.89819, y: 297}
+  m_AnchoredPosition: {x: -34.898193, y: 297}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &310023645
@@ -5715,7 +5715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 7, y: -66.7}
+  m_AnchoredPosition: {x: 7, y: -66.70001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &581127522
@@ -8824,7 +8824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 6.7, y: 148}
+  m_AnchoredPosition: {x: 6.699997, y: 148}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &840078234
@@ -9598,7 +9598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.00005340576}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &908085183
@@ -11023,7 +11023,7 @@ MonoBehaviour:
     sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
     personalParent: {fileID: 0}
     messages:
-    - briefIsRemote: 2
+    - briefIsRemote: 0
       sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
       name: Peacock Penny
       content: Hello
@@ -17516,7 +17516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0, y: 5}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 429.2737, y: 288.13}
   m_Pivot: {x: 0.50000006, y: 0.50000006}
 --- !u!114 &1545172009
@@ -18153,6 +18153,8 @@ MonoBehaviour:
       ac: {fileID: 8300000, guid: 911a5bab319c8d04ab46cf5e4bd10de5, type: 3}
     - name: pay
       ac: {fileID: 8300000, guid: 846f8fe4aeb69be428d0c10ba208a008, type: 3}
+  - tag: "\u5176\u4ED6"
+    siList: []
 --- !u!1001 &1603190542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19499,7 +19501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13.1, y: -356.4}
+  m_AnchoredPosition: {x: 13.099998, y: -356.40002}
   m_SizeDelta: {x: 183.6, y: 107.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721051098
@@ -21460,7 +21462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.9582, y: 9.2855}
+  m_AnchoredPosition: {x: -3.9581985, y: 9.285507}
   m_SizeDelta: {x: 496.266, y: 558.9435}
   m_Pivot: {x: 0.50671786, y: 0.5089718}
 --- !u!114 &1882382767
@@ -21734,7 +21736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 7.6602, y: 0}
+  m_AnchoredPosition: {x: 7.660202, y: 0}
   m_SizeDelta: {x: 194.5514, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1925785206
@@ -24253,7 +24255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -338, y: 560.04974}
+  m_AnchoredPosition: {x: -338, y: 560.05}
   m_SizeDelta: {x: 682, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &8583374371964610329

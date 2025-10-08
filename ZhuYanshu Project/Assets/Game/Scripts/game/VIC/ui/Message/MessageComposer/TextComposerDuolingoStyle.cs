@@ -3,8 +3,10 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows;
 using static UnityEditor.Progress;
 
 namespace Assets.Game.Scripts.game.VIC.ui
@@ -192,9 +194,17 @@ namespace Assets.Game.Scripts.game.VIC.ui
             var s = currentMcp.rawText;
             //Debug.Log("GetFinalString rawText: " + s);
             var options = GetOptionsString();
+            s = UnifyUnderscores(s);
             var res = FillBlanks(s, options);
             Debug.Log("finalString: " + res);
             return res;
+        }
+
+        //given a string， how to replace all more-than-4 underscores such as "_________" to "____"
+        public static string UnifyUnderscores(string s)
+        {
+            string output = Regex.Replace(s, @"_{5,}", "____");
+            return output;
         }
 
         public static string FillBlanks(string s, List<string> options)
@@ -202,7 +212,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
             if (string.IsNullOrEmpty(s) || options == null || options.Count == 0)
                 return s;
 
-            const string blank = "________";          // 8 underscores
+            const string blank = "____";          // 4 underscores
             int idx = 0;
             var sb = new System.Text.StringBuilder(s.Length);
 

@@ -16,6 +16,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer
 
         public string 备注;
         public MessagePrototype reply;
+        public float replyDelay=2.5f;
     }
 
     [System.Serializable]
