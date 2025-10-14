@@ -13,10 +13,10 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer
         public string[] options;
 
         public MessageBlank[] blanks;
-
+        public string colorTag = "";
         public string 备注;
         public MessagePrototype reply;
-        public float replyDelay=2.5f;
+        public float replyDelay = 2.5f;
     }
 
     [System.Serializable]

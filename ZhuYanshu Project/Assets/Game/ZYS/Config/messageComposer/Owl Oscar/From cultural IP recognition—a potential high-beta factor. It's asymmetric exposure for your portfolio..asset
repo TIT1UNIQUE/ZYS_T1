@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
+  m_Name: "From cultural IP recognition\u2014a potential high-beta factor. It's asymmetric
+    exposure for your portfolio."
+  m_EditorClassIdentifier: 
+  rawText: "From cultural IP recognition\u2014a potential high-beta factor. It's
+    asymmetric exposure for your portfolio."
+  options: []
+  blanks: []
+  colorTag: 7FB
+  "\u5907\u6CE8": "From cultural IP recognition\u2014a potential high-beta factor.
+    It's asymmetric exposure for your portfolio."
+  reply:
+    briefIsRemote: 2
+    sp: {fileID: 21300000, guid: 43069e8fba4923d47bc6fd6ace1be0d4, type: 3}
+    name: Owl Oscar
+    content: Sound logic. That works. I'll take a set.
+    answerProto: {fileID: 0}
+    sdt:
+      Year: 2025
+      Month: 10
+      Day: 15
+      Hour: 0
+      Minute: 31
+      Second: 4
+  replyDelay: 3

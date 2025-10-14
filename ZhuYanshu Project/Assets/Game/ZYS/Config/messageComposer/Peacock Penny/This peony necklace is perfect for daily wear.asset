@@ -10,36 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
-  m_Name: Zero fees, plus one free redesign service.
+  m_Name: This peony necklace is perfect for daily wear
   m_EditorClassIdentifier: 
-  rawText: ________ fees, plus one ________ __________ service.
+  rawText: This ________ ________ is ________ for daily wear.
   options:
-  - Zero
-  - High
-  - free
-  - expensive
-  - redesign
-  - home
-  - luxary
+  - ugly
+  - perfect
+  - necklace
+  - peony
+  - bad
+  - necktile
   blanks:
-  - anchorPos: {x: 60, y: -20}
+  - anchorPos: {x: 140, y: -20}
     correctAnswerIndex: 3
-  - anchorPos: {x: 456, y: -20}
+  - anchorPos: {x: 292, y: -20}
     correctAnswerIndex: 2
-  - anchorPos: {x: 641, y: -20}
+  - anchorPos: {x: 482, y: -20}
     correctAnswerIndex: 1
-  "\u5907\u6CE8": Zero fees, plus one free redesign service.
+  "\u5907\u6CE8": This peony necklace is perfect for daily wear.
   reply:
-    briefIsRemote: 0
+    briefIsRemote: 2
     sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
     name: Peacock Penny
-    content: Value retention plus renewal? Sold.
-    answerProto: {fileID: 0}
+    content: Nice design, but influencer trends fade quickly.
+    answerProto: {fileID: 11400000, guid: 805d7199d9cca3f4dbb62992581b8024, type: 2}
     sdt:
       Year: 2025
       Month: 10
-      Day: 8
-      Hour: 16
-      Minute: 19
-      Second: 51
-  replyDelay: 5
+      Day: 14
+      Hour: 23
+      Minute: 17
+      Second: 57
+  replyDelay: 3

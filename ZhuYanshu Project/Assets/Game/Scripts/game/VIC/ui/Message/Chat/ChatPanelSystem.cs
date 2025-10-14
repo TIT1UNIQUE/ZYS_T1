@@ -1,6 +1,8 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Message;
 using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
+using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,45 +27,41 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
         private void Start()
         {
-            for (int i = 0; i < personalTransParent.childCount; i++)
-            {
-                var c = personalTransParent.GetChild(i);
-                c.gameObject.SetActive(false);
-            }
-
+            SyncPersona("");
             currentChatData = null;
             textComposerDuolingo.Setup(null);
         }
 
-        public void AddMessageOfChat(string chatDataName, MessagePrototype m, bool isNewMessage)
+        public void SyncPersona(string personName)
         {
-            ChatData targetChatData = null;
-            foreach (var chat in chats)
+            //Debug.Log("SyncPersonal " + personName);
+            for (int i = 0; i < personalTransParent.childCount; i++)
             {
-
-                if (chat.messages.Count > 0 && chat.messages[0].name == chatDataName)
+                var c = personalTransParent.GetChild(i);
+                //Debug.Log(c.gameObject.name);
+                if (c.gameObject.name.Contains(personName))
                 {
-                    chat.messages.Add(m);
-                    targetChatData = chat;
-                    MessageSystem.instance.RefreshMessageConnection(chatDataName, m, isNewMessage);
+                    c.gameObject.SetActive(true);
+                }
+                else
+                {
+                    c.gameObject.SetActive(false);
                 }
             }
+        }
 
-            if (targetChatData == null)
+        public void AddMessageOfChat(string chatDataName, MessagePrototype m, bool isNewMessage)
+        {
+            ChatData targetChatData = GetChatData(chatDataName);
+            if (targetChatData != null)
+            {
+                targetChatData.messages.Add(m);
+                MessageSystem.instance.RefreshMessageConnection(chatDataName, m, isNewMessage);
+            }
+            else
             {
                 targetChatData = new ChatData();
                 Debug.Log("create ChatData for " + chatDataName);
-                for (int i = 0; i < personalTransParent.childCount; i++)
-                {
-                    var c = personalTransParent.GetChild(i);
-                    if (c.gameObject.name.Contains(chatDataName))
-                    {
-                        targetChatData.personalParent = c.gameObject;
-                        Debug.Log("personal found");
-                        break;
-                    }
-                }
-
                 targetChatData.name = chatDataName;
                 if (targetChatData.sp == null && m.sp != null)
                 {
@@ -135,21 +133,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             var lastMessage = cd.messages[cd.messages.Count - 1];
             textComposerDuolingo.Setup(lastMessage.answerProto);
             //chatKeyWordsSystem.Show(cd);
-            for (int i = 0; i < personalTransParent.childCount; i++)
-            {
-                var c = personalTransParent.GetChild(i);
-                c.gameObject.SetActive(c.gameObject == cd.personalParent);
-            }
+            SyncPersona(cd.name);
         }
-    }
-
-    [System.Serializable]
-    public class ChatData
-    {
-        public string name;
-        public Sprite sp;
-        [HideInInspector]
-        public GameObject personalParent;
-        public List<MessagePrototype> messages = new List<MessagePrototype>();
     }
 }

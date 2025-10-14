@@ -1,4 +1,5 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.ChatPanel;
+using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 using Assets.Game.Scripts.game.VIC.ui.notif;
 using System;
 using System.Collections;
@@ -67,9 +68,18 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
         public void AddMessageOfChat_now_remote(string chatDataName, MessagePrototype m)
         {
-            var chat = ChatPanelSystem.instance.currentChatData;
-            //m.name = chat.name;
-            //m.sp = chat.sp;
+            var chat = ChatPanelSystem.instance.GetChatData(chatDataName);
+            if (m.briefIsRemote == MessagePrototype.BriefIsRemoteType.Remote)
+            {
+                m.name = chat.name;
+                m.sp = chat.sp;
+            }
+            else if (m.briefIsRemote == MessagePrototype.BriefIsRemoteType.Self)
+            {
+                m.name = selfName;
+                m.sp = selfSp;
+            }
+
             m.sdt = DateTime.Now;
             AddMessageOfChat(chatDataName, m, true);
         }

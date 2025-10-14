@@ -3,6 +3,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
@@ -138,8 +139,8 @@ namespace Assets.Game.Scripts.game.VIC.ui
 
         public void Setup(MessageComposerPrototype mcp)
         {
-            Debug.Log("TextComposerDuolingoStyle Setup");
-            Debug.Log(mcp);
+            //Debug.Log("TextComposerDuolingoStyle Setup");
+            //Debug.Log(mcp);
             currentMcp = mcp;
             submitButton.SetActive(false);
 
@@ -155,7 +156,12 @@ namespace Assets.Game.Scripts.game.VIC.ui
                 cg.alpha = 1;
                 cg.blocksRaycasts = true;
 
-                bodyText.text = mcp.rawText;
+                var displayText = mcp.rawText;
+                if (mcp.colorTag != "")
+                {
+                    displayText = "<color=#" + mcp.colorTag + ">" + displayText + "</color>";
+                }
+                bodyText.text = displayText;
 
                 int i = 0;
                 foreach (var b in mcp.blanks)
@@ -170,6 +176,7 @@ namespace Assets.Game.Scripts.game.VIC.ui
                     CreateItem(iw, i);
                     i++;
                 }
+                UpdateSubmitState();
             }
         }
 

@@ -64,11 +64,22 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             if (r != null)
             {
                 //Debug.Log(r.content);
-                var chatDataName = ChatPanelSystem.instance.currentChatData.name;
+                var replyerName = ChatPanelSystem.instance.currentChatData.name;
+                Debug.Log("replyerName " + replyerName + " content " + r.content);
                 StartCoroutine(
                     MainScreenSystem.instance.DelayActionIE(
                      d,
-                        () => { MessageSystem.instance.AddMessageOfChat_now_remote(chatDataName, r); }
+                        () =>
+                        {
+                            if (r.content == "")
+                            {
+                                ChatPanelSystem.instance.textComposerDuolingo.Setup(r.answerProto);
+                            }
+                            else
+                            {
+                                MessageSystem.instance.AddMessageOfChat_now_remote(replyerName, r);
+                            }
+                        }
                        )
                     );
             }
