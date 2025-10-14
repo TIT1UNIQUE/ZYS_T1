@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
-  m_Name: Consider our Panda Gold Coins. They're legal tender with collectible value.
+  m_Name: Consider our Panda -
   m_EditorClassIdentifier: 
   rawText: Consider our Panda Gold ________. They're ________ tender with __________
     value.

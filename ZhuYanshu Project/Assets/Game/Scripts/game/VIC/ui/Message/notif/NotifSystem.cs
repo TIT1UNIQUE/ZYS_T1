@@ -1,4 +1,6 @@
-﻿using Assets.Game.Scripts.game.VIC.ui.Message;
+﻿using Assets.Game.Scripts.game.VIC.ui.ChatPanel;
+using Assets.Game.Scripts.game.VIC.ui.Message;
+using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
@@ -16,8 +18,14 @@ namespace Assets.Game.Scripts.game.VIC.ui.notif
 
         private NotifBehaviour crtNotif;
 
-        public void Add(MessagePrototype p)
+        public void Add(string chatDataName, MessagePrototype p)
         {
+            ChatData targetChatData = ChatPanelSystem.instance.GetChatData(chatDataName);
+            if (targetChatData != null && p.sp == null)
+            {
+                p.sp = targetChatData.sp;
+                p.name = targetChatData.name;
+            }
             HideCrtNotif();
 
             var newNotif = Instantiate(prefab, prefab.transform.parent);

@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
-  m_Name: Mr. Wang, this Dragon  Gold  Coins has a classic design with excellent
-    symbolism.
+  m_Name: It's 999 pure Gold with-
   m_EditorClassIdentifier: 
   rawText: It's 999 ________ ________ with ________ bank collateral ratio.
   options:
@@ -28,9 +27,7 @@ MonoBehaviour:
     correctAnswerIndex: 4
   - anchorPos: {x: 590, y: -20}
     correctAnswerIndex: 5
-  colorTag: 
-  "\u5907\u6CE8": Mr. Wang, this Dragon  Gold  Coins has a classic design with excellent
-    symbolism.
+  "\u5907\u6CE8": It's 999 pure Gold with 90% bank collateral ratio.
   reply:
     briefIsRemote: 2
     sp: {fileID: 21300000, guid: 599072f5bd015ba408b8276e7e90ddbe, type: 3}

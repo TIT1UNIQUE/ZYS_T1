@@ -89,7 +89,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             ChatPanelSystem.instance.AddMessageOfChat(chatDataName, p, isNewMessage);
 
             if (isNewMessage)
-                notifSystem.Add(p);
+                notifSystem.Add(chatDataName,p);
         }
 
         public void RefreshMessageConnection(string name, MessagePrototype p, bool isNewMessage)

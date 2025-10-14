@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
+  m_Name: You're absolutely right. But doesn't each era create its own classics This
+    coin is our generation's interpretation of dragon culture.
+  m_EditorClassIdentifier: 
+  rawText: You're absolutely right. But doesn't each era create its own classics?
+    This coin is our generation's interpretation of dragon culture.
+  options: []
+  blanks: []
+  colorTag: 7FB
+  "\u5907\u6CE8": You're absolutely right. But doesn't each era create its own classics?
+    This coin is our generation's interpretation of dragon culture.
+  reply:
+    briefIsRemote: 2
+    sp: {fileID: 0}
+    name: 
+    content: New interpretation?Explain.
+    answerProto: {fileID: 11400000, guid: 8eb88ec64f7370346a867d6ee4545c69, type: 2}
+    sdt:
+      Year: 2025
+      Month: 10
+      Day: 14
+      Hour: 23
+      Minute: 23
+      Second: 47
+  replyDelay: 2.5

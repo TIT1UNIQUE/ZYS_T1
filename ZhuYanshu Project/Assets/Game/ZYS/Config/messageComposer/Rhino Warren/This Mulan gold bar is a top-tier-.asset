@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
-  m_Name: This Mulan gold bar is a top-tier asset, ideal for legacy.
+  m_Name: This Mulan gold bar is a top-tier-
   m_EditorClassIdentifier: 
   rawText: This ________  ________ bar is a top-tier asset, ideal for ________.
   options:

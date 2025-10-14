@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96836fa0153e2543ac7e337dd624ab7, type: 3}
-  m_Name: "The Mulan IP adds emotional buff\u2014always outperforms plain gold in
-    downturns."
+  m_Name: The Mulan IP adds emotional buff-
   m_EditorClassIdentifier: 
   rawText: "The ________ IP adds __________ buff\u2014always outperforms plain ________
     in downturns."
@@ -23,12 +22,13 @@ MonoBehaviour:
   - gold
   - water
   blanks:
-  - anchorPos: {x: 137, y: -20}
+  - anchorPos: {x: 136, y: -20}
     correctAnswerIndex: 2
   - anchorPos: {x: 444, y: -20}
     correctAnswerIndex: 4
-  - anchorPos: {x: 40, y: -66}
+  - anchorPos: {x: 44, y: -66}
     correctAnswerIndex: 1
+  colorTag: 
   "\u5907\u6CE8": "The Mulan IP adds emotional buff\u2014always outperforms plain
     gold in downturns."
   reply:
