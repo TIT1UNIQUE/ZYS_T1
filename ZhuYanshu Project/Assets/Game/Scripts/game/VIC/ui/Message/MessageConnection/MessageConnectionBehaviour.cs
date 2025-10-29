@@ -51,11 +51,6 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             txt_time.text = m.timeStr;
         }
 
-        public void Hide()
-        {
-
-
-        }
 
         public void OnClick()
         {
