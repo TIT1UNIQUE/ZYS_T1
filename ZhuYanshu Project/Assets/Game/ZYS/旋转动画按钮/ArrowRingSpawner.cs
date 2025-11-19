@@ -1,4 +1,5 @@
 using Assets.Game.ZYS.旋转动画按钮;
+using System.Collections;
 using UnityEngine;
 
 [System.Serializable]
@@ -19,12 +20,31 @@ public class ArrowRingSpawner : MonoBehaviour
     public bool faceCenter = true;       // 箭头是否朝向中心
     public Transform parentTrans;
 
+    public float spawnInterval;
+    public int spawnWaves;
+
     void Start()
     {
         //SpawnAllRings();
     }
 
-    public void SpawnAllRings()
+    public void SpawnAllWaves()
+    {
+        StartCoroutine(SpawnAllWavesIE());
+    }
+
+    IEnumerator SpawnAllWavesIE()
+    {
+        float delayDelta = 0;
+        for (int i = 0; i < spawnWaves; i++)
+        {
+            delayDelta -= spawnInterval;
+            SpawnAllRings(delayDelta);
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    public void SpawnAllRings(float fadeDelayAdd)
     {
         foreach (var ring in rings)
         {
@@ -34,15 +54,21 @@ public class ArrowRingSpawner : MonoBehaviour
             for (int i = 0; i < ring.count; i++)
             {
                 float angleDeg = ring.startAngle + step * i;
-                SpawnArrow(ring, angleDeg, ring.startRotation + i * step);
+                SpawnArrow(ring, angleDeg, ring.startRotation + i * step, fadeDelayAdd);
             }
         }
     }
 
-    void SpawnArrow(ArrowRing ring, float angleDeg, float rot)
+    public void SpawnAllRings()
+    {
+        SpawnAllRings(0);
+    }
+
+    void SpawnArrow(ArrowRing ring, float angleDeg, float rot, float fadeDelayAdd = 0)
     {
         RingArrow arrow = Instantiate(arrowPrefab, parentTrans);
         arrow.transform.localRotation = Quaternion.Euler(0, 0, rot);
+        arrow.fadeDelay += fadeDelayAdd;
         arrow.Setup(angleDeg, ring.radius, ring.animationDelay);
         arrow.gameObject.SetActive(true);
     }

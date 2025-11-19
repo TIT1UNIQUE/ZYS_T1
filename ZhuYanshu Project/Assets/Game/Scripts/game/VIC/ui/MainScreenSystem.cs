@@ -111,6 +111,7 @@ public class MainScreenSystem : MonoBehaviour
     public RectTransform openningEmail;
 
     public Button openningEmailBtn;
+    public Button openningAppBtn;
 
     void ShowOpeningMail()
     {
@@ -150,9 +151,22 @@ public class MainScreenSystem : MonoBehaviour
         ToggleCanvasGroup(cg_popup_warning_closeMail, false, animationDuration_mid);
     }
 
+    public ArrowRingSpawner ars;
+    public float openAppDelay = 2.4f;
     public void OnClick_AppIcon()
     {
+        StartCoroutine(OpenAppIE());
+    }
+
+    IEnumerator OpenAppIE()
+    {
         com.SoundSystem.instance.Play("do");
+        openningAppBtn.GetComponent<RectTransform>().DOPunchScale(Vector3.one * 0.15f, 0.15f, 4, 0.5f);
+        openningAppBtn.enabled = false;
+        ars.SpawnAllWaves();
+        yield return new WaitForSeconds(openAppDelay);
+        openningAppBtn.GetComponent<RectTransform>().DOPunchScale(Vector3.one * 0.25f, 0.25f, 2, 1f);
+        yield return new WaitForSeconds(0.25f);
         ToggleCanvasGroup(cg_App, true, animationDuration_short);
         MessageSystem.instance.初始化message系统();
     }
