@@ -57,9 +57,10 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             var size1 = new Vector2(expandedSizeW, shrinkedSizeH);
             var size2 = new Vector2(expandedSizeW, expandedSizeH);
             targetFrame.DOSizeDelta(size1, expandDuration1).SetEase(Ease.OutCubic);
-            yield return new WaitForSeconds(expandDuration1);
+            yield return new WaitForSeconds(expandDuration1 - 0.15f);
             targetFrame.DOSizeDelta(size2, expandDuration2).SetEase(Ease.OutCubic); ;
             yield return new WaitForSeconds(expandDuration2);
+            cgContent.DOKill();
             cgContent.DOFade(1, 0.5f);
             iconBtn.enabled = true;
             isExpanded = true;
@@ -69,12 +70,13 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
         {
             iconBtn.enabled = false;
             targetFrame.DOKill();
+            cgContent.DOKill();
             cgContent.DOFade(0, 0.25f);
             //yield return new WaitForSeconds(0.25f);
             var size1 = new Vector2(expandedSizeW, shrinkedSizeH);
             var size2 = new Vector2(shrinkedSizeW, shrinkedSizeH);
             targetFrame.DOSizeDelta(size1, expandDuration1).SetEase(Ease.OutCubic);
-            yield return new WaitForSeconds(expandDuration1);
+            yield return new WaitForSeconds(expandDuration1 - 0.15f);
             targetFrame.DOSizeDelta(size2, expandDuration2).SetEase(Ease.OutCubic);
             yield return new WaitForSeconds(expandDuration2);
             iconBtn.enabled = true;
