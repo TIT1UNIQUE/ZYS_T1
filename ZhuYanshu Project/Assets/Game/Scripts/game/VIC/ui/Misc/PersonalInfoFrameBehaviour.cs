@@ -23,6 +23,9 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
         public GameObject icon;
         public Button iconBtn;
 
+        public CircularHudPointerDisplayer hpd_income;
+        public CircularHudPointerDisplayer hpd_kpi;
+
         void Start()
         {
             cgContent.alpha = 0;
@@ -60,6 +63,10 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             yield return new WaitForSeconds(expandDuration1 - 0.15f);
             targetFrame.DOSizeDelta(size2, expandDuration2).SetEase(Ease.OutCubic); ;
             yield return new WaitForSeconds(expandDuration2);
+
+            SyncKpi();
+            SyncIncome();
+
             cgContent.DOKill();
             cgContent.DOFade(1, 0.5f);
             iconBtn.enabled = true;
@@ -81,6 +88,17 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             yield return new WaitForSeconds(expandDuration2);
             iconBtn.enabled = true;
             isExpanded = false;
+        }
+
+        public void SyncKpi()
+        {
+            hpd_kpi.IncreaseTo(1);
+        }
+
+
+        public void SyncIncome()
+        {
+            hpd_income.IncreaseTo(1);
         }
     }
 }
