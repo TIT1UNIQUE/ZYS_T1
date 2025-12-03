@@ -30,6 +30,7 @@ public class ArrowRingSpawner : MonoBehaviour
 
     public void SpawnAllWaves()
     {
+        parentTrans.gameObject.SetActive(true);
         StartCoroutine(SpawnAllWavesIE());
     }
 

@@ -16,7 +16,9 @@ namespace com
 
         private void Update()
         {
-            trans.localEulerAngles += Speed * (useRawTime ? Time.deltaTime : GameTime.deltaTime);
+            var t = useRawTime ? Time.deltaTime : GameTime.deltaTime;
+            trans.localEulerAngles += Speed * t;
+            trans.Rotate(Speed * t, Space.Self);
         }
     }
 }

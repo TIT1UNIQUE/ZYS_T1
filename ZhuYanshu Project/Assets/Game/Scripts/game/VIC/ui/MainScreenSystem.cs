@@ -12,6 +12,7 @@ public class MainScreenSystem : MonoBehaviour
 {
     public static MainScreenSystem instance;
     public CanvasGroup cg_Welcome;
+    public CanvasGroup cg_WelcomeContent;
     public CanvasGroup cg_Desktop;
     public CanvasGroup cg_Mail;
     public CanvasGroup cg_App;
@@ -81,14 +82,16 @@ public class MainScreenSystem : MonoBehaviour
         ToggleCanvasGroup(cg_App, false);
         ToggleCanvasGroup(cg_popup_warning_closeMail, false);
         openningEmailBtn.enabled = false;
+
+        ToggleCanvasGroup(cg_Welcome, true);
         StartCoroutine(DelayActionIE(2, ShowWelcomeScreen));
     }
 
     void ShowWelcomeScreen()
     {
         com.SoundSystem.instance.Play("ding");
-        ToggleCanvasGroup(cg_Welcome, true, animationDuration_long);
 
+        ToggleCanvasGroup(cg_WelcomeContent, true, animationDuration_long);
         StartCoroutine(DelayActionIE(2.7f, HideWelcomeScreenAndShowDesktop));
     }
 
@@ -160,14 +163,15 @@ public class MainScreenSystem : MonoBehaviour
 
     IEnumerator OpenAppIE()
     {
-        com.SoundSystem.instance.Play("do");
+        com.SoundSystem.instance.Play("tap");
         openningAppBtn.GetComponent<RectTransform>().DOPunchScale(Vector3.one * 0.15f, 0.15f, 4, 0.5f);
         openningAppBtn.enabled = false;
         ars.SpawnAllWaves();
         yield return new WaitForSeconds(openAppDelay);
-        openningAppBtn.GetComponent<RectTransform>().DOPunchScale(Vector3.one * 0.25f, 0.25f, 2, 1f);
-        yield return new WaitForSeconds(0.25f);
+        openningAppBtn.GetComponent<RectTransform>().DOPunchScale(Vector3.one * 0.25f, 0.2f, 2, 1f);
+        yield return new WaitForSeconds(0.2f);
+        com.SoundSystem.instance.Play("ding");
         ToggleCanvasGroup(cg_App, true, animationDuration_short);
-        MessageSystem.instance.初始化message系统();
+        MessageSystem.instance.鍒濆鍖杕essage绯荤粺();
     }
 }
