@@ -30,24 +30,26 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
         {
             if (isOn)
             {
-                isOn = false;
-                StartCoroutine(ToggleBarOffIE());
+                ToggleOff();
             }
             else
             {
-                isOn = true;
-                StartCoroutine(ToggleBarOnIE());
+                ToggleOn();
             }
 
         }
 
         public void ToggleOn()
         {
+            isOn = true;
+            com.SoundSystem.instance.Play("do");
             StartCoroutine(ToggleBarOnIE());
         }
 
         public void ToggleOff()
         {
+            isOn = false;
+            com.SoundSystem.instance.Play("do");
             StartCoroutine(ToggleBarOffIE());
         }
 
