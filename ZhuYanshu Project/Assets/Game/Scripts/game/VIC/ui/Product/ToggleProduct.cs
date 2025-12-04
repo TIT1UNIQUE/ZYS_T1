@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Assets.Game.Scripts.game.VIC.ui.Misc
 {
-    public class StatusBar : MonoBehaviour
+    public class ToggleProduct : MonoBehaviour
     {
         public Scrollbar toggleBar;
         public Image toggleBarImg;
@@ -15,7 +15,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
         public CanvasGroup cgProgBar;
         public float toggleBarSpeed;
         public Text progText;
-
+        public float offAlpha;
         public bool isOn { get; private set; }
 
         private void Start()
@@ -23,7 +23,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             toggleBar.value = 0;
             toggleBarImg.color = toggleBarImgStartColor;
             isOn = false;
-            cgProgBar.alpha = 0;
+            cgProgBar.alpha = offAlpha;
         }
 
         public void Toggle()
@@ -74,7 +74,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
         {
             toggleBarImg.DOKill();
             toggleBarImg.DOColor(toggleBarImgStartColor, 0.35f);
-            cgProgBar.DOFade(0, 0.25f).SetDelay(0.25f);
+            cgProgBar.DOFade(offAlpha, 0.25f).SetDelay(0.25f);
 
 
             while (toggleBar.value > 0)
