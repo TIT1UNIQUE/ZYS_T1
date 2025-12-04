@@ -30,7 +30,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
             if (m.name == chatData.name)
             {
-                //Debug.Log("SetMessage " + chatData.name);
+                Debug.Log("SetMessage " + chatData.name);
                 if (m.sp == null && chatData.sp != null)
                     m.sp = chatData.sp;
                 if (string.IsNullOrEmpty(m.name) && !string.IsNullOrEmpty(chatData.name))
@@ -55,6 +55,9 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public void OnClick()
         {
             //Debug.Log("OnClick");
+            //Debug.Log(chatData.name);
+            //Debug.Log(chatData.sp);
+            //Debug.Log(chatData.messages.Count);
             ChatPanelSystem.instance.Show(chatData);
         }
 
