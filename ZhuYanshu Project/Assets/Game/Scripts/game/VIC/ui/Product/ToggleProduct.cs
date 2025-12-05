@@ -20,10 +20,10 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
 
         private void Start()
         {
-            toggleBar.value = 0;
-            toggleBarImg.color = toggleBarImgStartColor;
-            isOn = false;
-            cgProgBar.alpha = offAlpha;
+            toggleBar.value = 1;
+            toggleBarImg.color = toggleBarImgEndColor;
+            isOn = true;
+            cgProgBar.alpha = 1;
         }
 
         public void Toggle()

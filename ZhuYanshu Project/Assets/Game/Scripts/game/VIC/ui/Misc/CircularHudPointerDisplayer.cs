@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Game.Scripts.game.VIC.ui.Misc
@@ -6,6 +7,11 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
     public class CircularHudPointerDisplayer : MonoBehaviour
     {
         public RectTransform pointer;
+        public TextMeshProUGUI currentNumTxt;
+        public TextMeshProUGUI kpiNumTxt;
+        public TextMeshProUGUI restNumTxt;
+        public TextMeshProUGUI percentageNumTxt;
+
         public float minRatioAngle;
         public float maxRatioAngle;
         public float radius;
@@ -29,14 +35,25 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             Sync(0);
         }
 
-        public bool test;
+        // public bool test;
         void Update()
         {
-            if (test)
-            {
-                test = false;
-                IncreaseTo(1);
-            }
+            //if (test)
+            //{
+            //    test = false;
+            //    IncreaseTo(1);
+            //}
+        }
+
+        public void Sync(int current, int max)
+        {
+            float ratio = (float)current / max;
+            currentNumTxt.text = "$" + current;
+            kpiNumTxt.text = "$" + max;
+            restNumTxt.text = "$" + (max - current) + " left!";
+            percentageNumTxt.text = "" + Mathf.FloorToInt(ratio * 100) + "% of KPI";
+
+            IncreaseTo(ratio);
         }
 
         public void IncreaseTo(float t)

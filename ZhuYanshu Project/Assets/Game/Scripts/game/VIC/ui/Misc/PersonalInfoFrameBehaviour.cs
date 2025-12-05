@@ -24,10 +24,11 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
         public Button iconBtn;
 
         public CircularHudPointerDisplayer hpd_income;
-        public CircularHudPointerDisplayer hpd_kpi;
+        public CircularHudPointerDisplayer hpd_spending;
 
         void Start()
         {
+            InitIncomeAndSpending();
             cgContent.alpha = 0;
             isExpanded = false;
             expandedSizeW = targetFrame.sizeDelta.x;
@@ -64,8 +65,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             targetFrame.DOSizeDelta(size2, expandDuration2).SetEase(Ease.OutCubic); ;
             yield return new WaitForSeconds(expandDuration2);
 
-            SyncKpi();
-            SyncIncome();
+            SyncIncome(income_current, income_kpi);
+            SyncSpending(spending_current, spending_kpi);
 
             cgContent.DOKill();
             cgContent.DOFade(1, 0.5f);
@@ -89,16 +90,58 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             iconBtn.enabled = true;
             isExpanded = false;
         }
+        public int income_current_startMin;
+        public int income_current_startMax;
+        public int income_kpi_startMin;
+        public int income_kpi_startMax;
 
-        public void SyncKpi()
+        public int income_current;
+        public int income_kpi;
+
+        public int spending_current_startMin;
+        public int spending_current_startMax;
+        public int spending_kpi_startMin;
+        public int spending_kpi_startMax;
+
+        public int spending_current;
+        public int spending_kpi;
+
+        public void InitIncomeAndSpending()
         {
-            hpd_kpi.IncreaseTo(1);
+            income_current = Random.Range(income_current_startMin, income_current_startMax);
+            income_kpi = Random.Range(income_kpi_startMin, income_kpi_startMax);
+            income_kpi = ((int)((float)income_kpi / 500f)) * 500;
+
+            spending_current = Random.Range(spending_current_startMin, spending_current_startMax);
+            spending_kpi = Random.Range(spending_kpi_startMin, spending_kpi_startMax);
+            spending_kpi = ((int)((float)spending_kpi / 10f)) * 10;
+
+            SyncIncome(income_current, income_kpi);
+            SyncSpending(spending_current, spending_kpi);
+        }
+
+        public void AddIncome(int delta)
+        {
+            income_current += delta;
+            SyncIncome(income_current, income_kpi);
+
+        }
+
+        public void AddSpending(int delta)
+        {
+            spending_current += delta;
+            SyncSpending(spending_current, spending_kpi);
+        }
+
+        public void SyncSpending(int current, int kpi)
+        {
+            hpd_spending.Sync(current, kpi);
         }
 
 
-        public void SyncIncome()
+        public void SyncIncome(int current, int kpi)
         {
-            hpd_income.IncreaseTo(1);
+            hpd_income.Sync(current, kpi);
         }
     }
 }
