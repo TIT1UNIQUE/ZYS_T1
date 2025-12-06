@@ -19,9 +19,9 @@ MonoBehaviour:
   - pure
   - raw
   blanks:
-  - anchorPos: {x: 356, y: -20}
+  - anchorPos: {x: 356, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 682, y: -20}
+  - anchorPos: {x: 682, y: -22}
     correctAnswerIndex: 0
   colorTag: 
   "\u5907\u6CE8": But it's minted in pure gold with strong value retention.

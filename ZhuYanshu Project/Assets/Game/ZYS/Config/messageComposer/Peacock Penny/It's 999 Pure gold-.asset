@@ -21,12 +21,13 @@ MonoBehaviour:
   - bad
   - gold
   blanks:
-  - anchorPos: {x: 285, y: -20}
+  - anchorPos: {x: 285, y: -22}
     correctAnswerIndex: 5
-  - anchorPos: {x: 619, y: -20}
+  - anchorPos: {x: 619, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 869, y: -20}
+  - anchorPos: {x: 869, y: -22}
     correctAnswerIndex: 0
+  colorTag: 
   "\u5907\u6CE8": "It's 999 Pure gold\u2014always redeemable at market price."
   reply:
     briefIsRemote: 2

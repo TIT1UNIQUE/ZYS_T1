@@ -1,6 +1,7 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Message;
 using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
 using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
+using Assets.Game.Scripts.game.VIC.ui.Product;
 using DG.Tweening;
 using LeTai.Asset.TranslucentImage;
 using System;
@@ -58,6 +59,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             Debug.Log("OnClickSubmit");
             var r = textComposer.currentMcp.reply;
             var d = textComposer.currentMcp.replyDelay;
+            var hasDuolinguo = textComposer.currentMcp.options.Length > 0;
             MessageSystem.instance.AddMessageOfChat_now_myReply(textComposer.GetFinalString());
             com.SoundSystem.instance.Play("do");
             //Debug.Log(r);
@@ -83,6 +85,20 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
                        )
                     );
             }
+
+
+            if (hasDuolinguo)
+            {
+                StartCoroutine(CostTokenIE());
+            }
+
+        }
+
+        IEnumerator CostTokenIE()
+        {
+            yield return new WaitForSeconds(0.6f);
+            com.SoundSystem.instance.Play("tap");
+            ProductSystem.instance.ConsumeSomeTokens();
         }
 
         public Canvas canvas;

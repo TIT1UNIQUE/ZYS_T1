@@ -2,6 +2,7 @@
 using UnityEngine;
 using Assets.Game.Scripts.game.VIC.ui.Product;
 using Unity.VisualScripting;
+using Assets.Game.Scripts.game.VIC.ui.Message;
 
 namespace Assets.Game.Scripts.game.VIC
 {
@@ -48,9 +49,9 @@ namespace Assets.Game.Scripts.game.VIC
         public void OnPressKey_3()
         {
             Debug.LogWarning("OnPressKey_3");
-            Debug.Log("!-> add some message runtime");
+            Debug.Log("!-> add some boss's message runtime");
 
-             //TODO
+            MessageSystem.instance.InsertBossRandomMessage();
         }
 
         public void OnPressKey_4()

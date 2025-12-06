@@ -54,6 +54,13 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             }
         }
 
+        public void InsertBossRandomMessage()
+        {
+            var i = UnityEngine.Random.Range(0, bossRandomMessages.messages.Count);
+            var m = bossRandomMessages.messages[i];
+            AddMessageOfChat(bossRandomMessages.name, m, true);
+        }
+
         public void AddMessageOfChat_now_myReply(string content)
         {
             var chat = ChatPanelSystem.instance.currentChatData;
@@ -89,7 +96,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             ChatPanelSystem.instance.AddMessageOfChat(chatDataName, p, isNewMessage);
 
             if (isNewMessage)
-                notifSystem.Add(chatDataName,p);
+                notifSystem.Add(chatDataName, p);
         }
 
         public void RefreshMessageConnection(string name, MessagePrototype p, bool isNewMessage)
@@ -125,6 +132,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
         public ChatData[] 默认消息列表;
         public MimicChatData[] 开头接受的消息列表;
+
+        public ChatData bossRandomMessages;
     }
 
     [System.Serializable]

@@ -22,26 +22,26 @@ MonoBehaviour:
   - legal
   - Coins
   blanks:
-  - anchorPos: {x: 503, y: -20}
+  - anchorPos: {x: 555, y: -22}
     correctAnswerIndex: 5
-  - anchorPos: {x: 805, y: -20}
+  - anchorPos: {x: 999, y: -22}
     correctAnswerIndex: 4
-  - anchorPos: {x: 66, y: -66}
+  - anchorPos: {x: 222, y: -70}
     correctAnswerIndex: 1
   colorTag: 
   "\u5907\u6CE8": Consider our Panda Gold Coins. They're legal tender with collectible
     value.
   reply:
     briefIsRemote: 2
-    sp: {fileID: 21300000, guid: 43069e8fba4923d47bc6fd6ace1be0d4, type: 3}
-    name: Owl Oscar
+    sp: {fileID: -1269984362, guid: 655d8f21b90fb8348b0b39b783c9809f, type: 3}
+    name: Fox Oscar
     content: 'Collectible value is subjective. I need data: annualized return, volatility.'
     answerProto: {fileID: 11400000, guid: bfb29b0862ab357468b722bda6753624, type: 2}
     sdt:
       Year: 2025
-      Month: 10
-      Day: 15
-      Hour: 0
-      Minute: 26
-      Second: 50
+      Month: 12
+      Day: 6
+      Hour: 21
+      Minute: 49
+      Second: 27
   replyDelay: 5

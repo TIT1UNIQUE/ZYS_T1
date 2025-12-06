@@ -22,12 +22,13 @@ MonoBehaviour:
   - say
   - admit
   blanks:
-  - anchorPos: {x: 175, y: -20}
+  - anchorPos: {x: 175, y: -22}
     correctAnswerIndex: 0
-  - anchorPos: {x: 400, y: -20}
+  - anchorPos: {x: 400, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 633, y: -20}
+  - anchorPos: {x: 633, y: -22}
     correctAnswerIndex: 1
+  colorTag: 
   "\u5907\u6CE8": "\u554A\u5B9E\u6253\u5B9E\u5BA2\u6237\u7684\u5361\u4E0A"
   reply:
     briefIsRemote: 0
@@ -42,3 +43,4 @@ MonoBehaviour:
       Hour: 0
       Minute: 0
       Second: 0
+  replyDelay: 2.5

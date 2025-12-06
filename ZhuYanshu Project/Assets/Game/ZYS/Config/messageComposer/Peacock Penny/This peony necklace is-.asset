@@ -21,12 +21,13 @@ MonoBehaviour:
   - bad
   - necktile
   blanks:
-  - anchorPos: {x: 140, y: -20}
+  - anchorPos: {x: 140, y: -22}
     correctAnswerIndex: 3
-  - anchorPos: {x: 292, y: -20}
+  - anchorPos: {x: 292, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 482, y: -20}
+  - anchorPos: {x: 482, y: -22}
     correctAnswerIndex: 1
+  colorTag: 
   "\u5907\u6CE8": This peony necklace is perfect for daily wear.
   reply:
     briefIsRemote: 2

@@ -22,11 +22,11 @@ MonoBehaviour:
   - gold
   - water
   blanks:
-  - anchorPos: {x: 136, y: -20}
+  - anchorPos: {x: 136, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 444, y: -20}
+  - anchorPos: {x: 444, y: -22}
     correctAnswerIndex: 4
-  - anchorPos: {x: 44, y: -66}
+  - anchorPos: {x: 44, y: -70}
     correctAnswerIndex: 1
   colorTag: 
   "\u5907\u6CE8": "The Mulan IP adds emotional buff\u2014always outperforms plain

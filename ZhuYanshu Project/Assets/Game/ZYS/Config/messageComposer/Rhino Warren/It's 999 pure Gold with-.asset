@@ -21,12 +21,13 @@ MonoBehaviour:
   - gold
   - 90%
   blanks:
-  - anchorPos: {x: 182, y: -20}
+  - anchorPos: {x: 182, y: -22}
     correctAnswerIndex: 0
-  - anchorPos: {x: 340, y: -20}
+  - anchorPos: {x: 340, y: -22}
     correctAnswerIndex: 4
-  - anchorPos: {x: 590, y: -20}
+  - anchorPos: {x: 590, y: -22}
     correctAnswerIndex: 5
+  colorTag: 
   "\u5907\u6CE8": It's 999 pure Gold with 90% bank collateral ratio.
   reply:
     briefIsRemote: 2

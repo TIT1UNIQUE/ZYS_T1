@@ -22,12 +22,13 @@ MonoBehaviour:
   - home
   - luxary
   blanks:
-  - anchorPos: {x: 60, y: -20}
+  - anchorPos: {x: 60, y: -22}
     correctAnswerIndex: 3
-  - anchorPos: {x: 456, y: -20}
+  - anchorPos: {x: 456, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 641, y: -20}
+  - anchorPos: {x: 641, y: -22}
     correctAnswerIndex: 1
+  colorTag: 
   "\u5907\u6CE8": Zero fees, plus one free redesign service.
   reply:
     briefIsRemote: 2
