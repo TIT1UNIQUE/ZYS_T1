@@ -45,30 +45,43 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             //}
         }
 
-        public void Sync(int current, int max)
+        public void Sync(int current, int max, bool fromStart)
         {
             float ratio = (float)current / max;
             currentNumTxt.text = "$" + current;
             kpiNumTxt.text = "$" + max;
-            restNumTxt.text = "$" + (max - current) + " left!";
+            var rest = max - current;
+            if (rest > 0)
+            {
+                restNumTxt.text = "$" + rest + " left!";
+            }
+            else
+            {
+                restNumTxt.text = "None left!";
+            }
+
             percentageNumTxt.text = "" + Mathf.FloorToInt(ratio * 100) + "% of KPI";
 
-            IncreaseTo(ratio);
+            IncreaseTo(ratio, fromStart);
         }
 
-        public void IncreaseTo(float t)
+        public void IncreaseTo(float t, bool fromStart)
         {
-            StartCoroutine(IncreaseIE(t));
+            StartCoroutine(IncreaseIE(t, fromStart));
         }
 
-        IEnumerator IncreaseIE(float t)
+        IEnumerator IncreaseIE(float t, bool fromStart)
         {
-            ratio = 0;
-            while (ratio < t)
+            if (fromStart)
+            {
+                ratio = 0;
+            }
+            var refinedT = Mathf.Clamp01(t);
+            while (ratio < refinedT)
             {
                 ratio += Time.deltaTime * speed;
-                if (ratio > t)
-                    ratio = t;
+                if (ratio > refinedT)
+                    ratio = refinedT;
                 Sync(ratio);
                 yield return null;
             }

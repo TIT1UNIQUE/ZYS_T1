@@ -65,8 +65,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             targetFrame.DOSizeDelta(size2, expandDuration2).SetEase(Ease.OutCubic); ;
             yield return new WaitForSeconds(expandDuration2);
 
-            SyncIncome(income_current, income_kpi);
-            SyncSpending(spending_current, spending_kpi);
+            SyncIncome(income_current, income_kpi, true);
+            SyncSpending(spending_current, spending_kpi, true);
 
             cgContent.DOKill();
             cgContent.DOFade(1, 0.5f);
@@ -116,32 +116,32 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             spending_kpi = Random.Range(spending_kpi_startMin, spending_kpi_startMax);
             spending_kpi = ((int)((float)spending_kpi / 10f)) * 10;
 
-            SyncIncome(income_current, income_kpi);
-            SyncSpending(spending_current, spending_kpi);
+            SyncIncome(income_current, income_kpi, true);
+            SyncSpending(spending_current, spending_kpi, true);
         }
 
         public void AddIncome(int delta)
         {
             income_current += delta;
-            SyncIncome(income_current, income_kpi);
+            SyncIncome(income_current, income_kpi, false);
 
         }
 
         public void AddSpending(int delta)
         {
             spending_current += delta;
-            SyncSpending(spending_current, spending_kpi);
+            SyncSpending(spending_current, spending_kpi, false);
         }
 
-        public void SyncSpending(int current, int kpi)
+        public void SyncSpending(int current, int kpi, bool fromStart)
         {
-            hpd_spending.Sync(current, kpi);
+            hpd_spending.Sync(current, kpi, fromStart);
         }
 
 
-        public void SyncIncome(int current, int kpi)
+        public void SyncIncome(int current, int kpi, bool fromStart)
         {
-            hpd_income.Sync(current, kpi);
+            hpd_income.Sync(current, kpi, fromStart);
         }
     }
 }

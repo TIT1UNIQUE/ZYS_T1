@@ -1,6 +1,7 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.Misc;
 using DG.Tweening;
 using System.Collections;
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,8 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
         public ProductInfoPanel productInfoPanel;
         public PersonalInfoFrameBehaviour personalInfoFrame;
 
-        public GameObject vip3UpPopup;
+        public SimplePopup vip3UpPopup;
+        public SimplePopup jobDonePopup;
 
         public int vipLevel;
         public int tokens;
@@ -28,7 +30,11 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
 
         private void Start()
         {
-            vip3UpPopup.SetActive(false);
+            _isUpgradeCoroutineRunning = false;
+            isArduinoDeviceConnected = false;
+
+            vip3UpPopup.Hide();
+            jobDonePopup.Hide();
             SetVipLevel(1);
             ConsumeSomeTokens();
         }
@@ -98,20 +104,29 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
             com.SoundSystem.instance.Play("pay");
         }
 
-
-
-
+        public void AddSomeSpending()
+        {
+            int v = Random.Range(9, 18);
+            personalInfoFrame.AddSpending(v);
+            com.SoundSystem.instance.Play("pay");
+        }
 
         public void ShowVipUpPopup()
         {
+            if (!isArduinoDeviceConnected)
+            {
+                Debug.LogWarning("ArduinoDevice not Connected, cannot upgrade vip");
+                return;
+            }
+
             if (_isUpgradeCoroutineRunning)
                 return;
-            vip3UpPopup.SetActive(true);
+            vip3UpPopup.Show();
         }
 
         public void OnClickVipUpPopup()
         {
-            vip3UpPopup.SetActive(false);
+            vip3UpPopup.Hide();
             UpgradeVipTo3();
         }
 
@@ -127,7 +142,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
             com.SoundSystem.instance.Play("pay");
             var max = crtVipLevel.maxTokens;
             var delta = max - tokens;
-            int addValue = (int)(delta * 0.1f + 5);
+            int addValue = (int)(delta * 0.05f + 1);
             while (tokens < max)
             {
                 tokens += addValue;
@@ -136,7 +151,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
                     tokens = max;
                 }
                 //yield return null;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
                 productInfoPanel.SyncTokensSimple(tokens, max);
             }
             com.SoundSystem.instance.Play("ding");
@@ -145,9 +160,10 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
             yield return new WaitForSeconds(0.2f);
             tokens = 0;
             yield return new WaitForSeconds(0.2f);
+            productInfoPanel.tokenTxt.text = "Upgrading...";
             max = crtVipLevel.maxTokens;
             delta = max - tokens;
-            addValue = (int)(delta * 0.1f + 5);
+            addValue = (int)(delta * 0.05f + 1);
             while (tokens < max)
             {
                 tokens += addValue;
@@ -156,7 +172,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
                     tokens = max;
                 }
                 //yield return null;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
                 productInfoPanel.SyncTokensSimple(tokens, max);
             }
             com.SoundSystem.instance.Play("ding");
@@ -164,6 +180,70 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
 
             yield return new WaitForSeconds(1);
             _isUpgradeCoroutineRunning = false;
+        }
+
+        public void ShowJobDonePopup()
+        {
+            int income = 500 * Random.Range(4, 11);
+            jobDonePopup.attributeValue = income;
+            jobDonePopup.SetTextWithAttribute();
+            jobDonePopup.Show();
+        }
+
+        public void OnClickJobDonePopup()
+        {
+            jobDonePopup.Hide();
+            JobDone(jobDonePopup.attributeValue);
+        }
+
+        void JobDone(int income)
+        {
+            StartCoroutine(JobDoneIE(income));
+        }
+
+        IEnumerator JobDoneIE(int income)
+        {
+            com.SoundSystem.instance.Play("pay");
+            personalInfoFrame.AddIncome(income);
+            yield return new WaitForSeconds(1);
+            productInfoPanel.tokenTxt.text = "Adding...";
+            com.SoundSystem.instance.Play("tap");
+
+            var delta = 5000;
+            int addValue = (int)(delta * 0.1f);
+            var max = crtVipLevel.maxTokens;
+            var final = tokens + delta;
+
+            while (tokens < final)
+            {
+                tokens += addValue;
+                if (tokens > final)
+                {
+                    tokens = final;
+                }
+                //yield return null;
+                yield return new WaitForSeconds(0.05f);
+                productInfoPanel.SyncTokensSimple(tokens, max);
+            }
+            com.SoundSystem.instance.Play("ding");
+            productInfoPanel.SyncTokens(final, max);
+
+        }
+
+        public bool isArduinoDeviceConnected { get; private set; }
+        public void ToggleArduinoDevice()
+        {
+            isArduinoDeviceConnected = !isArduinoDeviceConnected;
+            if (isArduinoDeviceConnected)
+            {
+                Debug.LogWarning("ArduinoDevice Connected");
+                productInfoPanel.ToggleIcon(true);
+            }
+            else
+            {
+                Debug.LogWarning("ArduinoDevice unconnected");
+                productInfoPanel.ToggleIcon(false);
+            }
         }
     }
 }
