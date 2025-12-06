@@ -22,11 +22,11 @@ MonoBehaviour:
   - legal
   - Coins
   blanks:
-  - anchorPos: {x: 555, y: -22}
+  - anchorPos: {x: 558, y: -22}
     correctAnswerIndex: 5
-  - anchorPos: {x: 999, y: -22}
+  - anchorPos: {x: 935, y: -22}
     correctAnswerIndex: 4
-  - anchorPos: {x: 222, y: -70}
+  - anchorPos: {x: 304, y: -70}
     correctAnswerIndex: 1
   colorTag: 
   "\u5907\u6CE8": Consider our Panda Gold Coins. They're legal tender with collectible
@@ -41,7 +41,7 @@ MonoBehaviour:
       Year: 2025
       Month: 12
       Day: 6
-      Hour: 21
-      Minute: 49
-      Second: 27
+      Hour: 22
+      Minute: 25
+      Second: 29
   replyDelay: 5

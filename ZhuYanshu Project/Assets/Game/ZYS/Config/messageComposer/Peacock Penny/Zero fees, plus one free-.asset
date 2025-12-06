@@ -22,25 +22,25 @@ MonoBehaviour:
   - home
   - luxary
   blanks:
-  - anchorPos: {x: 60, y: -22}
+  - anchorPos: {x: 58, y: -22}
     correctAnswerIndex: 3
-  - anchorPos: {x: 456, y: -22}
+  - anchorPos: {x: 540, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 641, y: -22}
+  - anchorPos: {x: 770, y: -22}
     correctAnswerIndex: 1
   colorTag: 
   "\u5907\u6CE8": Zero fees, plus one free redesign service.
   reply:
     briefIsRemote: 2
-    sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
-    name: Peacock Penny
+    sp: {fileID: -721096519, guid: e3346967ac6dfd947af1c428d65355fa, type: 3}
+    name: Chipmunk Penny
     content: Value retention plus renewal? Sold.
     answerProto: {fileID: 0}
     sdt:
       Year: 2025
-      Month: 10
-      Day: 8
-      Hour: 16
-      Minute: 19
-      Second: 51
+      Month: 12
+      Day: 6
+      Hour: 22
+      Minute: 33
+      Second: 32
   replyDelay: 5

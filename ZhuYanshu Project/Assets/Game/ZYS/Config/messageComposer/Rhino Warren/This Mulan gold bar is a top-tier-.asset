@@ -21,11 +21,11 @@ MonoBehaviour:
   - Baroque
   - gold
   blanks:
-  - anchorPos: {x: 128, y: -22}
+  - anchorPos: {x: 146, y: -22}
     correctAnswerIndex: 0
-  - anchorPos: {x: 301, y: -22}
+  - anchorPos: {x: 366, y: -22}
     correctAnswerIndex: 5
-  - anchorPos: {x: 1014, y: -22}
+  - anchorPos: {x: 60, y: -70}
     correctAnswerIndex: 1
   colorTag: 
   "\u5907\u6CE8": This Mulan gold bar is a top-tier asset, ideal for legacy.

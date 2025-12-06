@@ -21,25 +21,25 @@ MonoBehaviour:
   - bad
   - gold
   blanks:
-  - anchorPos: {x: 285, y: -22}
+  - anchorPos: {x: 305, y: -22}
     correctAnswerIndex: 5
-  - anchorPos: {x: 619, y: -22}
+  - anchorPos: {x: 710, y: -22}
     correctAnswerIndex: 2
-  - anchorPos: {x: 869, y: -22}
+  - anchorPos: {x: 60, y: -70}
     correctAnswerIndex: 0
   colorTag: 
   "\u5907\u6CE8": "It's 999 Pure gold\u2014always redeemable at market price."
   reply:
     briefIsRemote: 2
-    sp: {fileID: 21300000, guid: 1342972fab765af4d8f02658dd9008e8, type: 3}
-    name: Peacock Penny
+    sp: {fileID: -721096519, guid: e3346967ac6dfd947af1c428d65355fa, type: 3}
+    name: Chipmunk Penny
     content: Any redemption fees?
     answerProto: {fileID: 11400000, guid: 8f3dfcf9997430041b0400587dd9d9f5, type: 2}
     sdt:
       Year: 2025
-      Month: 10
-      Day: 14
-      Hour: 23
-      Minute: 18
-      Second: 2
+      Month: 12
+      Day: 6
+      Hour: 22
+      Minute: 32
+      Second: 35
   replyDelay: 2.5
