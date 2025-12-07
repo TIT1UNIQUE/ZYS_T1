@@ -4905,7 +4905,7 @@ MonoBehaviour:
   animationDuration_long: 1.5
   animationDuration_mid: 0.7
   animationDuration_short: 0.4
-  testMainGame: 1
+  testMainGame: 0
   openningEmail_start: {fileID: 1185210079199374023}
   openningEmail_end: {fileID: 7096909144509879704}
   openningEmail: {fileID: 2853657800199768121}
