@@ -19,15 +19,15 @@ MonoBehaviour:
   "\u5907\u6CE8": ...
   reply:
     briefIsRemote: 2
-    sp: {fileID: 0}
-    name: 
-    content: 
+    sp: {fileID: -1315290148, guid: 6a9dc7a45ba52894290f9a931cad4406, type: 3}
+    name: Eagle Theodore
+    content: ???
     answerProto: {fileID: 11400000, guid: e0aa482a4a5fea64eaa1cf9223911208, type: 2}
     sdt:
       Year: 2025
-      Month: 10
-      Day: 14
-      Hour: 23
-      Minute: 23
-      Second: 47
+      Month: 12
+      Day: 7
+      Hour: 18
+      Minute: 8
+      Second: 56
   replyDelay: 2.5

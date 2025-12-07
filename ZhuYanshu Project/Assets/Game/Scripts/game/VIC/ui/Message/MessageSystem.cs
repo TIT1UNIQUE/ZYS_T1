@@ -1,5 +1,6 @@
 ﻿using Assets.Game.Scripts.game.VIC.ui.ChatPanel;
 using Assets.Game.Scripts.game.VIC.ui.Message.Chat;
+using Assets.Game.Scripts.game.VIC.ui.Message.MessageComposer;
 using Assets.Game.Scripts.game.VIC.ui.notif;
 using System;
 using System.Collections;
@@ -61,7 +62,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             AddMessageOfChat(bossRandomMessages.name, m, true);
         }
 
-        public void AddMessageOfChat_now_myReply(string content)
+        public void AddMessageOfChat_now_myReply(string content, MessageComposerPrototype answerProto)
         {
             var chat = ChatPanelSystem.instance.currentChatData;
             MessagePrototype msg = new MessagePrototype();
@@ -69,11 +70,12 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             msg.sp = selfSp;
             msg.content = content;
             msg.sdt = DateTime.Now;
-
+            msg.answerProto = answerProto;
+            //Debug.Log("AddMessageOfChat_now_myReply " + content);
             ChatPanelSystem.instance.AddMessageOfChat(chat.name, msg, true);
         }
 
-        public void AddMessageOfChat_now_remote(string chatDataName, MessagePrototype m)
+        public void AddMessageOfChat_now(string chatDataName, MessagePrototype m, MessageComposerPrototype answerProto)
         {
             var chat = ChatPanelSystem.instance.GetChatData(chatDataName);
             if (m.briefIsRemote == MessagePrototype.BriefIsRemoteType.Remote)
@@ -86,15 +88,25 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
                 m.name = selfName;
                 m.sp = selfSp;
             }
-
+            m.answerProto = answerProto;
             m.sdt = DateTime.Now;
+            //Debug.Log("AddMessageOfChat_now " + m.name + ":" + m.content);
             AddMessageOfChat(chatDataName, m, true);
         }
 
         public void AddMessageOfChat(string chatDataName, MessagePrototype p, bool isNewMessage)
         {
-            ChatPanelSystem.instance.AddMessageOfChat(chatDataName, p, isNewMessage);
-
+            if (p.content == "")
+            {
+                if (ChatPanelSystem.instance.currentChatData != null && ChatPanelSystem.instance.currentChatData.name == chatDataName)
+                {
+                    ChatPanelSystem.instance.textComposerDuolingo.Setup(p.answerProto);
+                }
+            }
+            else
+            {
+                ChatPanelSystem.instance.AddMessageOfChat(chatDataName, p, isNewMessage);
+            }
             if (isNewMessage)
                 notifSystem.Add(chatDataName, p);
         }

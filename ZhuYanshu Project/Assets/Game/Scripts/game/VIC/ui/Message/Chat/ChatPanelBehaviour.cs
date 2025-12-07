@@ -56,48 +56,39 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
         public void OnClickSubmit()
         {
-            Debug.Log("OnClickSubmit");
+            //Debug.Log("OnClickSubmit");
             var r = textComposer.currentMcp.reply;
             var d = textComposer.currentMcp.replyDelay;
             var hasDuolinguo = textComposer.currentMcp.options.Length > 0;
-            MessageSystem.instance.AddMessageOfChat_now_myReply(textComposer.GetFinalString());
+            MessageSystem.instance.AddMessageOfChat_now_myReply(textComposer.GetFinalString(), null);
             com.SoundSystem.instance.Play("do");
+            if (hasDuolinguo)
+            {
+                StartCoroutine(CostTokenIE());
+            }
             //Debug.Log(r);
             if (r != null)
             {
                 //Debug.Log(r.content);
-                var replyerName = ChatPanelSystem.instance.currentChatData.name;
-                Debug.Log("replyerName " + replyerName + " content " + r.content);
+                var chatname = ChatPanelSystem.instance.currentChatData.name;
+                //Debug.Log("chat name " + chatname + " content " + r.content);
                 StartCoroutine(
                     MainScreenSystem.instance.DelayActionIE(
                      d,
                         () =>
                         {
-                            if (r.content == "")
-                            {
-                                ChatPanelSystem.instance.textComposerDuolingo.Setup(r.answerProto);
-                            }
-                            else
-                            {
-                                MessageSystem.instance.AddMessageOfChat_now_remote(replyerName, r);
-                            }
+                            //  Debug.Log("replay delayed " + d + ":" + r.content);
+                            MessageSystem.instance.AddMessageOfChat_now(chatname, r, r.answerProto);
                         }
                        )
                     );
             }
-
-
-            if (hasDuolinguo)
-            {
-                StartCoroutine(CostTokenIE());
-            }
-
         }
 
         IEnumerator CostTokenIE()
         {
-            yield return new WaitForSeconds(0.6f);
-            com.SoundSystem.instance.Play("tap");
+            yield return new WaitForSeconds(0.65f);
+            com.SoundSystem.instance.Play("ding");
             ProductSystem.instance.ConsumeSomeTokens();
         }
 

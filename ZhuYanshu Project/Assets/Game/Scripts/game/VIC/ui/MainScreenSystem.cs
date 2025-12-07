@@ -137,19 +137,15 @@ public class MainScreenSystem : MonoBehaviour
         StartCoroutine(DelayActionIE(5, Show_popup_warning_closeMail));
     }
 
-    public BlinkCanvasGroup bcg;
-
     void Show_popup_warning_closeMail()
     {
         com.SoundSystem.instance.Play("ding");
         ToggleCanvasGroup(cg_popup_warning_closeMail, true, animationDuration_short);
-        bcg.enabled = true;
     }
 
     public void OnClickClose_popup_warning_closeMail()
     {
         com.SoundSystem.instance.Play("tap");
-        bcg.enabled = false;
         ToggleCanvasGroup(cg_Mail, false, 0);
         ToggleCanvasGroup(cg_popup_warning_closeMail, false, animationDuration_mid);
     }

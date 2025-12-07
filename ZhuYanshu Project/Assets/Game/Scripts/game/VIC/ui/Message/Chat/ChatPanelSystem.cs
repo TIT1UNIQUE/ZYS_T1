@@ -39,7 +39,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             {
                 var c = personalTransParent.GetChild(i);
                 //Debug.Log(c.gameObject.name);
-                if (c.gameObject.name.Contains(personName))
+                if (!string.IsNullOrEmpty(personName) && c.gameObject.name.Contains(personName))
                 {
                     c.gameObject.SetActive(true);
                 }
@@ -52,6 +52,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
 
         public void AddMessageOfChat(string chatDataName, MessagePrototype m, bool isNewMessage)
         {
+            //Debug.Log("AddMessageOfChat " + chatDataName + ": " + m.name + " " + m.content + " isNewMessage:" + isNewMessage);
             ChatData targetChatData = GetChatData(chatDataName);
             if (targetChatData != null)
             {
@@ -61,7 +62,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
             else
             {
                 targetChatData = new ChatData();
-                Debug.Log("create ChatData for " + chatDataName);
+                // Debug.Log("create ChatData for " + chatDataName + " m " + m.name + ":" + m.content);
                 targetChatData.name = chatDataName;
                 if (targetChatData.sp == null && m.sp != null)
                 {
@@ -129,8 +130,10 @@ namespace Assets.Game.Scripts.game.VIC.ui.ChatPanel
                     cpb.AddSelf(p);
                 }
             }
-
+            //Debug.Log("show all chats of this ChatData");
             var lastMessage = cd.messages[cd.messages.Count - 1];
+            //Debug.Log(lastMessage.content);
+            // Debug.Log(lastMessage.name);
             textComposerDuolingo.Setup(lastMessage.answerProto);
             //chatKeyWordsSystem.Show(cd);
             SyncPersona(cd.name);

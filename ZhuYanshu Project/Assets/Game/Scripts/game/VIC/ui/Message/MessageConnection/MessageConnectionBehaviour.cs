@@ -30,7 +30,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
 
             if (m.name == chatData.name)
             {
-                Debug.Log("SetMessage " + chatData.name);
+                //Debug.Log("SetMessage " + chatData.name);
                 if (m.sp == null && chatData.sp != null)
                     m.sp = chatData.sp;
                 if (string.IsNullOrEmpty(m.name) && !string.IsNullOrEmpty(chatData.name))
@@ -70,6 +70,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public float endAnchoredX;
 
         public float duration_ShowAnimation;
+        public float duration_RefreshAnimation;
         public CanvasGroup cg;
 
         public void PlayNoAnimation()
@@ -81,6 +82,9 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
         public void PlayRefreshAnimation()
         {
             // Debug.Log("PlayRefreshAnimation");
+
+            cg.alpha = 0;
+
             //毛玻璃 alpha变化
             tImg.DOKill();
             var c = tImg.color;
@@ -88,6 +92,13 @@ namespace Assets.Game.Scripts.game.VIC.ui.Message
             tImg.color = c;
 
             tImg.DOFade(endAlpha, duration_ShowAnimation);
+
+            //里面的图 anchor position变化
+            rect_innerContainer.DOKill();
+            var a = rect_innerContainer.anchoredPosition;
+            a.x = (startAnchoredX + 2 * endAnchoredX) / 3f;
+            rect_innerContainer.anchoredPosition = a;
+            rect_innerContainer.DOAnchorPosX(endAnchoredX, duration_RefreshAnimation).OnComplete(ShowContext);
         }
 
         public void PlayShowAnimation()
