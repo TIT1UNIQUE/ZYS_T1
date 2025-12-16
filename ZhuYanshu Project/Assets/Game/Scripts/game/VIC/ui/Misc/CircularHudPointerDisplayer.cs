@@ -21,15 +21,6 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
         public float speed;
         public float pointerAngleOffset;
 
-        void Sync(float r)
-        {
-            ratio = r;
-            var angle = Mathf.Lerp(minRatioAngle, maxRatioAngle, ratio);
-            pointer.localEulerAngles = new Vector3(0, 0, pointerAngleOffset - angle);
-            var a = Mathf.PI - (angleOffset + angle) * Mathf.Deg2Rad;
-            pointer.anchoredPosition = offset + new Vector2(Mathf.Cos(a) * radius, Mathf.Sin(a) * radius);
-        }
-
         void Start()
         {
             Sync(0);
@@ -43,6 +34,14 @@ namespace Assets.Game.Scripts.game.VIC.ui.Misc
             //    test = false;
             //    IncreaseTo(1);
             //}
+        }
+        void Sync(float r)
+        {
+            ratio = r;
+            var angle = Mathf.Lerp(minRatioAngle, maxRatioAngle, ratio);
+            pointer.localEulerAngles = new Vector3(0, 0, pointerAngleOffset - angle);
+            var a = Mathf.PI - (angleOffset + angle) * Mathf.Deg2Rad;
+            pointer.anchoredPosition = offset + new Vector2(Mathf.Cos(a) * radius, Mathf.Sin(a) * radius);
         }
 
         public void Sync(int current, int max, bool fromStart)

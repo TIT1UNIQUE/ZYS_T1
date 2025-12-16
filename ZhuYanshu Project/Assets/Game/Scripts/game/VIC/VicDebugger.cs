@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using Assets.Game.Scripts.game.VIC.ui.Message;
+using Assets.Game.Scripts.game.VIC.ui.Misc;
 using Assets.Game.Scripts.game.VIC.ui.Product;
+using System.Collections;
 using Unity.VisualScripting;
-using Assets.Game.Scripts.game.VIC.ui.Message;
+using UnityEngine;
 
 namespace Assets.Game.Scripts.game.VIC
 {
@@ -38,7 +39,7 @@ namespace Assets.Game.Scripts.game.VIC
             ProductSystem.instance.ShowJobDonePopup();
         }
 
-      
+
         public void OnPressKey_2()
         {
             Debug.LogWarning("OnPressKey_2");
@@ -92,6 +93,14 @@ namespace Assets.Game.Scripts.game.VIC
             ProductSystem.instance.AddSomeSpending();
         }
 
+        public void OnPressKey_9()
+        {
+            Debug.LogWarning("OnPressKey_9");
+            Debug.Log("!-> pop AD");
+            //
+            InterlinkAdSystem.instance.PopupAd();
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -125,6 +134,10 @@ namespace Assets.Game.Scripts.game.VIC
             if (Input.GetKeyDown(KeyCode.Alpha8))
             {
                 OnPressKey_8();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha9))
+            {
+                OnPressKey_9();
             }
         }
     }

@@ -9,6 +9,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
         public int lv;
         public int maxTokens;
         public RectTransform label;
+        public RectTransform labelChat;
         public float scaleFactor = 0.6f;
     }
 }

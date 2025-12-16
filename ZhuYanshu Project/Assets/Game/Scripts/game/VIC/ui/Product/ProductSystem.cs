@@ -30,6 +30,12 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
 
         private void Start()
         {
+            foreach (var vl in productInfoPanel.vipLevels)
+            {
+                vl.label.gameObject.SetActive(false);
+                vl.labelChat.gameObject.SetActive(false);
+            }
+
             _isUpgradeCoroutineRunning = false;
             isArduinoDeviceConnected = false;
 
@@ -41,6 +47,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
 
         public void SetVipLevel(int lv)
         {
+            Debug.Log("SetVipLevel " + lv);
             var vl = GetVipLevel(lv);
             if (vl == null)
             {
@@ -68,10 +75,15 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
 
         public void SetVipLevelLabel(VipLevel vipLevel)
         {
+            Debug.Log("SetVipLevelLabel " + vipLevel.lv);
+
             foreach (var vl in productInfoPanel.vipLevels)
             {
                 vl.label.gameObject.SetActive(false);
+                vl.labelChat.gameObject.SetActive(false);
             }
+
+            vipLevel.labelChat.gameObject.SetActive(true);
 
             vipLevel.label.gameObject.SetActive(true);
             vipLevel.label.DOKill();
@@ -127,20 +139,27 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
         public void OnClickVipUpPopup()
         {
             vip3UpPopup.Hide();
-            UpgradeVipTo3();
+            UpgradeVip();
         }
 
-        void UpgradeVipTo3()
+        void UpgradeVip()
         {
             _isUpgradeCoroutineRunning = true;
-            StartCoroutine(UpgradeVipTo3IE());
+            StartCoroutine(UpgradeVipIE());
         }
 
-        IEnumerator UpgradeVipTo3IE()
+        IEnumerator UpgradeVipIE()
         {
+            var crtVipLevelNum = vipLevel;
             productInfoPanel.tokenTxt.text = "Upgrading...";
             com.SoundSystem.instance.Play("pay");
+            yield return new WaitForSeconds(0.25f);
+
+            tokens = 0;//test
             var max = crtVipLevel.maxTokens;
+            productInfoPanel.SyncTokensSimple(tokens, max);
+            yield return new WaitForSeconds(0.25f);
+
             var delta = max - tokens;
             int addValue = (int)(delta * 0.05f + 1);
             while (tokens < max)
@@ -155,30 +174,9 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
                 productInfoPanel.SyncTokensSimple(tokens, max);
             }
             com.SoundSystem.instance.Play("ding");
-            SetVipLevel(2);
+            SetVipLevel(crtVipLevelNum + 1);
 
             yield return new WaitForSeconds(0.2f);
-            tokens = 0;
-            yield return new WaitForSeconds(0.2f);
-            productInfoPanel.tokenTxt.text = "Upgrading...";
-            max = crtVipLevel.maxTokens;
-            delta = max - tokens;
-            addValue = (int)(delta * 0.05f + 1);
-            while (tokens < max)
-            {
-                tokens += addValue;
-                if (tokens > max)
-                {
-                    tokens = max;
-                }
-                //yield return null;
-                yield return new WaitForSeconds(0.05f);
-                productInfoPanel.SyncTokensSimple(tokens, max);
-            }
-            com.SoundSystem.instance.Play("ding");
-            SetVipLevel(3);
-
-            yield return new WaitForSeconds(1);
             _isUpgradeCoroutineRunning = false;
         }
 
@@ -205,14 +203,19 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
         {
             com.SoundSystem.instance.Play("pay");
             personalInfoFrame.AddIncome(income);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1f);
+
+            var max = crtVipLevel.maxTokens;
+            productInfoPanel.SyncTokensSimple(tokens, max);
+
             productInfoPanel.tokenTxt.text = "Adding...";
             com.SoundSystem.instance.Play("tap");
 
             var delta = 5000;
             int addValue = (int)(delta * 0.1f);
-            var max = crtVipLevel.maxTokens;
             var final = tokens + delta;
+
+            productInfoPanel.SyncTokensSimple(tokens, max);
 
             while (tokens < final)
             {

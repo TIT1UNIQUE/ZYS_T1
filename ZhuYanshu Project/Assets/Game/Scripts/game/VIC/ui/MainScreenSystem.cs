@@ -5,6 +5,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +17,6 @@ public class MainScreenSystem : MonoBehaviour
     public CanvasGroup cg_Desktop;
     public CanvasGroup cg_Mail;
     public CanvasGroup cg_App;
-
-    public CanvasGroup cg_popup_warning_closeMail;
 
     public float animationDuration_long = 1.5f;
     public float animationDuration_mid = 0.7f;
@@ -71,7 +70,6 @@ public class MainScreenSystem : MonoBehaviour
             ToggleCanvasGroup(cg_Desktop, true);
             ToggleCanvasGroup(cg_Mail, false);
             ToggleCanvasGroup(cg_App, false);
-            ToggleCanvasGroup(cg_popup_warning_closeMail, false);
             openningEmailBtn.enabled = false;
             return;
         }
@@ -80,7 +78,6 @@ public class MainScreenSystem : MonoBehaviour
         ToggleCanvasGroup(cg_Desktop, false);
         ToggleCanvasGroup(cg_Mail, false);
         ToggleCanvasGroup(cg_App, false);
-        ToggleCanvasGroup(cg_popup_warning_closeMail, false);
         openningEmailBtn.enabled = false;
 
         ToggleCanvasGroup(cg_Welcome, true);
@@ -106,48 +103,52 @@ public class MainScreenSystem : MonoBehaviour
         ToggleCanvasGroup(cg_Desktop, true);
         ToggleCanvasGroup(cg_Welcome, false, 1);
 
-        StartCoroutine(DelayActionIE(3, ShowOpeningMail));
-    }
-
-    public RectTransform openningEmail_start;
-    public RectTransform openningEmail_end;
-    public RectTransform openningEmail;
-
-    public Button openningEmailBtn;
-    public Button openningAppBtn;
-
-    void ShowOpeningMail()
-    {
-        openningEmail.anchoredPosition = openningEmail_start.anchoredPosition;
-        openningEmail.gameObject.SetActive(true);
-        openningEmail.DOAnchorPos(openningEmail_end.anchoredPosition, animationDuration_long).OnComplete(
-            () => { openningEmailBtn.enabled = true; }
-            );
+        //StartCoroutine(DelayActionIE(3, ShowOpeningMail));
     }
 
     public void OnClickEmail()
     {
         com.SoundSystem.instance.Play("do");
-        openningEmail.DOAnchorPos(openningEmail_start.anchoredPosition, animationDuration_short).OnComplete(ShowEmail);
-    }
-
-    void ShowEmail()
-    {
         ToggleCanvasGroup(cg_Mail, true);
-        StartCoroutine(DelayActionIE(5, Show_popup_warning_closeMail));
+        emailTxt.maxVisibleWords = 6;
+        StartCoroutine(ShowEmailWordsIE());
+        StartCoroutine(DelayActionIE(6, ShowWarning));
     }
 
-    void Show_popup_warning_closeMail()
+    IEnumerator ShowEmailWordsIE()
     {
-        com.SoundSystem.instance.Play("ding");
-        ToggleCanvasGroup(cg_popup_warning_closeMail, true, animationDuration_short);
+        while (emailTxt.maxVisibleWords < 200)
+        {
+            yield return new WaitForSeconds(0.2f);
+            emailTxt.maxVisibleWords = emailTxt.maxVisibleWords + 1;
+        }
     }
 
-    public void OnClickClose_popup_warning_closeMail()
+
+    public RectTransform warning_pos_start;
+    public RectTransform warning_pos_end;
+    public RectTransform warningRect;
+    public TextMeshProUGUI emailTxt;
+
+    public Button openningEmailBtn;
+
+    public Button openningAppBtn;
+
+    void ShowWarning()
+    {
+        warningRect.anchoredPosition = warning_pos_start.anchoredPosition;
+        warningRect.gameObject.SetActive(true);
+        com.SoundSystem.instance.Play("ding");
+        warningRect.DOAnchorPos(warning_pos_end.anchoredPosition, animationDuration_long).OnComplete(
+            () => { openningEmailBtn.enabled = true; }
+            );
+    }
+
+    public void OnClickWarning()
     {
         com.SoundSystem.instance.Play("tap");
+        warningRect.DOAnchorPos(warning_pos_start.anchoredPosition, animationDuration_short);
         ToggleCanvasGroup(cg_Mail, false, 0);
-        ToggleCanvasGroup(cg_popup_warning_closeMail, false, animationDuration_mid);
     }
 
     public ArrowRingSpawner ars;
