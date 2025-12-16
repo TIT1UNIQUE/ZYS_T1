@@ -153,12 +153,11 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
             var crtVipLevelNum = vipLevel;
             productInfoPanel.tokenTxt.text = "Upgrading...";
             com.SoundSystem.instance.Play("pay");
-            yield return new WaitForSeconds(0.25f);
 
             tokens = 0;//test
             var max = crtVipLevel.maxTokens;
             productInfoPanel.SyncTokensSimple(tokens, max);
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.3f);
 
             var delta = max - tokens;
             int addValue = (int)(delta * 0.05f + 1);
@@ -182,7 +181,7 @@ namespace Assets.Game.Scripts.game.VIC.ui.Product
 
         public void ShowJobDonePopup()
         {
-            int income = 500 * Random.Range(4, 11);
+            int income = 500 * Random.Range(4, 8);
             jobDonePopup.attributeValue = income;
             jobDonePopup.SetTextWithAttribute();
             jobDonePopup.Show();

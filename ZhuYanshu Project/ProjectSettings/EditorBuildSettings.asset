@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Demo cxy.unity
     guid: 6a82dcf36b9962849b44fc3a52c84a82
+  - enabled: 1
+    path: "Assets/Game/Scenes/\u5B8C\u7F8E\u5BF9\u8BDD.unity"
+    guid: 03561a3893439b744a2947257feb4053
   m_configObjects: {}
